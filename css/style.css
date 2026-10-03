@@ -226,6 +226,7 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 .traits { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; }
 .chip { font-size: .72rem; background: var(--ink); color: var(--paper); padding: 1px 7px; font-family: var(--display); text-transform: uppercase; cursor: help; }
 .chip-tier { background: var(--red); color: var(--on-red); }
+.chip-phase { background: var(--gold); color: #141414; }
 .enemy-line { font-style: italic; font-size: .9rem; margin-top: 6px; }
 .enemy-line small { color: var(--muted); font-style: normal; }
 .enemy-art { width: 120px; flex: none; transition: transform .15s, opacity .5s; }

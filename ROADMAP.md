@@ -53,7 +53,7 @@ from the first unticked item. Keep each milestone playable.
 - [ ] Playtest on a real phone; fix layout/keyboard issues
 - [ ] Re-balance from real play (sim assumes 80% accuracy reaches leg 3 ~20%, 90% wins ~30%)
 - [x] Theme toggle (light/dark) in settings
-- [ ] Boss-specific mechanics beyond phases (Кощей needle, Горыныч per-head HP bars)
+- [x] Boss mechanics: Кощей typed final stand, Горыныч head indicator
 - [x] Gender challenge enemy (Кот учёный)
 - [x] Aspect-pair elite (Двойник)
 - [x] More events (20)

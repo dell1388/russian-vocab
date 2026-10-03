@@ -359,7 +359,10 @@ export class Combat {
     if (e.traits.has('undying') && !e.revived) {
       e.revived = true;
       e.hp = Math.round(e.maxHp * 0.35);
-      toast('Кощей бессмертен!', 'Koschei rises again! Find the needle…', 'boss');
+      // Final stand: only typed answers can reach the needle in the egg
+      e.phases = [{ at: 1, format: 'type' }];
+      e.phase = 0;
+      toast('Кощей бессмертен!', 'He rises again! Only typed answers can find the needle.', 'boss');
       audio.sfx('boss');
       this.renderEnemy();
       return;
@@ -613,8 +616,12 @@ export class Combat {
     $('i', hp).style.width = `${(e.hp / e.maxHp) * 100}%`;
     $('span', hp).textContent = `${e.hp} / ${e.maxHp}`;
     if (e.phases) {
-      hp.style.setProperty('--marks', e.phases.slice(1).map((p) => `${p.at * 100}%`).join(','));
       hp.dataset.phase = e.phase + 1;
+      const head = e.phases[e.phase].head;
+      const chip = $('.chip-phase');
+      const label = head ? `Голова ${head}/3` : e.revived ? 'Игла!' : `Фаза ${e.phase + 1}/${e.phases.length}`;
+      if (chip) chip.textContent = label;
+      else $('.traits')?.insertAdjacentHTML('beforeend', `<span class="chip chip-phase">${label}</span>`);
     }
   }
 
