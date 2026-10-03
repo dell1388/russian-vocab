@@ -17,7 +17,7 @@ export function defaultProfile() {
     daily: { last: null, streak: 0, best: {} },
     settings: {
       mode: 'en2ru', easy: false, sfx: 0.6, music: 0.3, tts: true, autoSpeak: true,
-      stress: true, posFilter: null, allBands: false, keyboard: 'auto', reduceMotion: false,
+      stress: true, theme: 'auto', posFilter: null, allBands: false, keyboard: 'auto', reduceMotion: false,
     },
     seenTutorial: false,
     run: null,

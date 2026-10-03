@@ -17,13 +17,13 @@ import { show, $, $$, esc, floatText, shake, sleep, isTouch, onLeave, toast } fr
 const BASE_MS = { mc: 7000, type_ru: 16000, type_en: 12000, match: 28000 };
 const MATCH_PAIRS = 5;
 // Enemy HP multipliers per tier (tuned so a normal fight is ~4–5 answers, a boss ~12+)
-const HP_TIER = { normal: 1.7, elite: 1.5, boss: 1.3 };
+const HP_TIER = { normal: 1.6, elite: 1.45, boss: 1.15 };
 const SPEAKER = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z" fill="currentColor"/><path d="M16 8q3 4 0 8M19 5q5 7 0 14" stroke="currentColor" stroke-width="2" fill="none"/></svg>';
 
 export function scaledEnemy(id, leg, easy) {
   const d = ENEMIES[id];
   const hpMult = (1 + 0.22 * leg) * HP_TIER[d.tier];
-  const dmgMult = (1 + 0.22 * leg) * (easy ? 0.75 : 1);
+  const dmgMult = (1 + 0.15 * leg) * (easy ? 0.75 : 1);
   return {
     id, def: d, name: d.name, en: d.en, tier: d.tier,
     maxHp: Math.round(d.hp * hpMult), hp: Math.round(d.hp * hpMult),

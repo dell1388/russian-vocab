@@ -1,0 +1,11 @@
+{
+  "name": "Транссиб — Russian Vocab Roguelike",
+  "short_name": "Транссиб",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3e9d2",
+  "theme_color": "#c8102e",
+  "icons": [{ "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

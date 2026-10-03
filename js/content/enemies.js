@@ -111,13 +111,13 @@ export const ENEMIES = {
     lines: [['Смерть моя на конце иглы...', 'My death is at the tip of a needle...'], ['Я бессмертен!', 'I am deathless!']],
   },
   gorynych: {
-    name: 'Змей Горыныч', en: 'Zmey Gorynych', tier: 'boss', hp: 210, dmg: 9, traits: ['double'],
+    name: 'Змей Горыныч', en: 'Zmey Gorynych', tier: 'boss', hp: 200, dmg: 7, traits: ['double'],
     phases: [{ at: 1, format: 'mc', head: 1 }, { at: 0.66, format: 'match', head: 2 }, { at: 0.33, format: 'type', head: 3 }],
     art: { kind: 'dragon', coat: '#2f6b2f', hat: 'none', acc: 'none', skin: '#3f8a3f' },
     lines: [['Три головы лучше, чем одна!', 'Three heads are better than one!']],
   },
   moroz: {
-    name: 'Генерал Мороз', en: 'General Frost', tier: 'boss', hp: 240, dmg: 12, traits: ['enrage', 'regen'],
+    name: 'Генерал Мороз', en: 'General Frost', tier: 'boss', hp: 200, dmg: 11, traits: ['enrage', 'regen'],
     phases: [{ at: 1, format: 'type' }, { at: 0.7, format: 'match' }, { at: 0.4, format: 'mc' }, { at: 0.2, format: 'type' }],
     art: { kind: 'human', coat: '#e8eef5', hat: 'ushanka', acc: 'beardwhite', skin: '#d6e4f0', medals: true },
     lines: [['Никто не проходит зиму!', 'No one gets through winter!'], ['Холод — моя армия.', 'The cold is my army.']],

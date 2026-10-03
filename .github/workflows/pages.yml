@@ -35,7 +35,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir _site
-          cp -r index.html css js data _site/
+          cp -r index.html sw.js manifest.webmanifest icons css js data _site/
           rm -rf _site/data/raw
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

@@ -350,7 +350,7 @@ async function shop(run, node) {
 // ---------------- Rest ----------------
 async function rest(run) {
   const rs = run_.runStats(run);
-  const healAmt = Math.round(run.maxHp * (0.3 + rs.restBonus) * rs.restHealMult);
+  const healAmt = Math.round(run.maxHp * (0.35 + rs.restBonus) * rs.restHealMult);
   const choice = await new Promise((resolve) => {
     const root = show(`${hud(run)}<div class="panel rest">
       <div class="rest-art">${badge('samovar', 'common', 96)}</div>
@@ -469,7 +469,7 @@ async function legComplete(run) {
   const p = save.get();
   p.stats.bestLeg = Math.max(p.stats.bestLeg, run.leg + 1);
   if (run.leg + 1 >= LEGS.length) return endRun(run, true);
-  const healed = run_.heal(run, run.maxHp * 0.25);
+  const healed = run_.heal(run, run.maxHp * 0.4);
   audio.sfx('victory');
   await new Promise((resolve) => {
     show(`<div class="poster" style="--leg:${L.color}">

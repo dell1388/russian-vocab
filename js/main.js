@@ -66,6 +66,12 @@ function title() {
   });
 }
 
+function applyTheme() {
+  const t = save.get().settings.theme || 'auto';
+  if (t === 'auto') delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = t;
+}
+
 function todayStr(d = new Date()) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
@@ -318,6 +324,7 @@ function settings() {
     <label class="toggle"><input type="checkbox" data-k="autoSpeak" ${s.autoSpeak ? 'checked' : ''}> <span>Speak words automatically</span></label>
     <label class="toggle"><input type="checkbox" data-k="stress" ${s.stress ? 'checked' : ''}> <span>Show stress marks (сло́во)</span></label>
     <label class="row">On-screen ЙЦУКЕН keyboard <select data-k="keyboard">${['auto', 'always', 'never'].map((k) => `<option ${s.keyboard === k ? 'selected' : ''}>${k}</option>`).join('')}</select></label>
+    <label class="row">Theme <select data-k="theme">${['auto', 'light', 'dark'].map((k) => `<option ${(s.theme || 'auto') === k ? 'selected' : ''}>${k}</option>`).join('')}</select></label>
     <label class="toggle"><input type="checkbox" data-k="reduceMotion" ${s.reduceMotion ? 'checked' : ''}> <span>Reduce motion</span></label>
     <h3>Words</h3>
     <label class="toggle"><input type="checkbox" data-k="allBands" ${s.allBands ? 'checked' : ''}> <span>Unlock all word bands now (I already know some Russian)</span></label>
@@ -330,6 +337,7 @@ function settings() {
       const k = inp.dataset.k;
       s[k] = inp.type === 'checkbox' ? inp.checked : inp.type === 'range' ? +inp.value : inp.value;
       if (k === 'sfx' || k === 'music') { audio.unlockAudio(); audio.refreshMusic(); }
+      if (k === 'theme') applyTheme();
       save.save();
     };
   });
@@ -393,6 +401,8 @@ async function boot() {
     return;
   }
   document.addEventListener('pointerdown', () => audio.unlockAudio(), { once: true });
+  applyTheme();
+  if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});
   title();
 }
 
