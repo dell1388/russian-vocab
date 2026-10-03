@@ -26,8 +26,11 @@ export function initWords(list) {
   WORDS = list;
   byId.clear();
   keyCache.clear();
+  let e = 0;
   for (const w of list) {
     w.band = w.ess ? 0 : BANDS.findIndex((b) => w.id <= b.max);
+    // Everyday essentials are rare in written text; interleave them early in the learning order
+    w.intro = w.ess ? 4 + 1.4 * e++ : w.id;
     byId.set(w.id, w);
   }
   return WORDS;
@@ -60,7 +63,8 @@ export function posGroup(pos) {
 
 /** Words available given unlocked band count and POS filter (array of group keys or null). */
 export function wordPool(bandsUnlocked, posFilter) {
-  return WORDS.filter((w) => w.band < bandsUnlocked && (!posFilter || posFilter.includes(posGroup(w.pos))));
+  return WORDS.filter((w) => w.band < bandsUnlocked && (!posFilter || posFilter.includes(posGroup(w.pos))))
+    .sort((a, b) => a.intro - b.intro);
 }
 
 /** n distinct distractor words for w, same POS where possible, close in frequency. */

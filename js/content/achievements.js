@@ -1,0 +1,31 @@
+// Achievements. check(p, ev) gets the profile and the event that just happened.
+// Events: {type:'fightWon'|'bossWon'|'runEnd'|'answer'|'mastered'|'level'|'daily'|'relic'|'rub', ...}
+
+export const ACHIEVEMENTS = [
+  { id: 'first_blood', name: 'Первая победа', en: 'First victory', desc: 'Win a fight', check: (p, e) => e.type === 'fightWon' },
+  { id: 'kazan', name: 'Казань взята', en: 'Kazan taken', desc: 'Defeat Баба Яга', check: (p, e) => e.type === 'bossWon' && e.boss === 'baba_yaga' },
+  { id: 'ural', name: 'Каменный цветок', en: 'Stone flower', desc: 'Defeat the Mistress of the Copper Mountain', check: (p, e) => e.type === 'bossWon' && e.boss === 'mednaya' },
+  { id: 'needle', name: 'Игла в яйце', en: 'Needle in the egg', desc: 'Defeat Кощей', check: (p, e) => e.type === 'bossWon' && e.boss === 'koshchey' },
+  { id: 'heads', name: 'Три головы', en: 'Three heads', desc: 'Defeat Змей Горыныч', check: (p, e) => e.type === 'bossWon' && e.boss === 'gorynych' },
+  { id: 'vladivostok', name: 'Владивосток!', en: 'Vladivostok!', desc: 'Complete the Trans-Siberian', check: (p, e) => e.type === 'runEnd' && e.win },
+  { id: 'mixed_win', name: 'Полиглот', en: 'Polyglot', desc: 'Win a run in Mixed mode', check: (p, e) => e.type === 'runEnd' && e.win && e.mode === 'mix' },
+  { id: 'hard_win', name: 'Без поблажек', en: 'No mercy', desc: 'Win a run without Easy mode', check: (p, e) => e.type === 'runEnd' && e.win && !e.easy },
+  { id: 'flawless_boss', name: 'Ни царапины', en: 'Not a scratch', desc: 'Defeat a boss without taking damage', check: (p, e) => e.type === 'bossWon' && e.flawless },
+  { id: 'streak10', name: 'Ударник', en: 'Shock worker', desc: '10-answer streak', check: (p, e) => e.type === 'answer' && e.streak >= 10 },
+  { id: 'streak25', name: 'Стахановец', en: 'Stakhanovite', desc: '25-answer streak', check: (p, e) => e.type === 'answer' && e.streak >= 25 },
+  { id: 'fast10', name: 'Молния', en: 'Lightning', desc: '10 answers under 1.5 s in one fight', check: (p, e) => e.type === 'answer' && e.fastInFight >= 10 },
+  { id: 'typed100', name: 'Машинистка', en: 'Typist', desc: 'Type 100 correct answers', check: (p) => (p.stats.typed || 0) >= 100 },
+  { id: 'master25', name: 'Ученик', en: 'Pupil', desc: 'Master 25 words', check: (p, e) => e.type === 'mastered' && e.count >= 25 },
+  { id: 'master100', name: 'Студент', en: 'Student', desc: 'Master 100 words', check: (p, e) => e.type === 'mastered' && e.count >= 100 },
+  { id: 'master300', name: 'Аспирант', en: 'Graduate', desc: 'Master 300 words', check: (p, e) => e.type === 'mastered' && e.count >= 300 },
+  { id: 'master1000', name: 'Академик', en: 'Academician', desc: 'Master 1000 words', check: (p, e) => e.type === 'mastered' && e.count >= 1000 },
+  { id: 'level5', name: 'Пионер', en: 'Pioneer', desc: 'Reach level 5', check: (p) => p.level >= 5 },
+  { id: 'level15', name: 'Герой труда', en: 'Hero of Labour', desc: 'Reach level 15', check: (p) => p.level >= 15 },
+  { id: 'daily3', name: 'Пятилетка', en: 'Five-year plan', desc: '3-day daily challenge streak', check: (p) => (p.daily.streak || 0) >= 3 },
+  { id: 'daily7', name: 'Неделя', en: 'A week', desc: '7-day daily challenge streak', check: (p) => (p.daily.streak || 0) >= 7 },
+  { id: 'rich', name: 'Олигарх', en: 'Oligarch', desc: 'Hold 300 ₽ at once', check: (p, e) => e.type === 'rub' && e.rub >= 300 },
+  { id: 'hoarder', name: 'Коллекционер', en: 'Collector', desc: 'Hold 10 relics in one run', check: (p, e) => e.type === 'relic' && e.count >= 10 },
+  { id: 'survivor', name: 'На волоске', en: 'By a hair', desc: 'Win a fight with 1–3 HP left', check: (p, e) => e.type === 'fightWon' && e.hp <= 3 },
+  { id: 'all_chars', name: 'Весь коллектив', en: 'Whole collective', desc: 'Unlock every character', check: (p) => Object.keys(p.unlocked).length >= 6 },
+  { id: 'runs10', name: 'Бывалый', en: 'Seasoned', desc: 'Start 10 runs', check: (p) => (p.stats.runs || 0) >= 10 },
+];
