@@ -1,0 +1,1138 @@
+{
+ "skip": [
+  "его",
+  "её",
+  "чём",
+  "ж",
+  "сей",
+  "уж",
+  "ко",
+  "об",
+  "чтоб",
+  "же",
+  "больший"
+ ],
+ "fix": {
+  "в": {
+   "gloss": "in, into"
+  },
+  "на": {
+   "gloss": "on, onto"
+  },
+  "с": {
+   "gloss": "with, from"
+  },
+  "по": {
+   "gloss": "along, by, according to"
+  },
+  "что": {
+   "gloss": "what, that",
+   "pos": "pron"
+  },
+  "а": {
+   "gloss": "and, but (contrast)"
+  },
+  "это": {
+   "gloss": "this, it"
+  },
+  "он": {
+   "gloss": "he"
+  },
+  "она": {
+   "gloss": "she"
+  },
+  "оно": {
+   "gloss": "it"
+  },
+  "к": {
+   "gloss": "to, towards"
+  },
+  "у": {
+   "gloss": "at, by (possession)"
+  },
+  "то": {
+   "gloss": "that, then"
+  },
+  "за": {
+   "gloss": "behind, for"
+  },
+  "свой": {
+   "gloss": "one's own"
+  },
+  "весь": {
+   "gloss": "all, the whole"
+  },
+  "от": {
+   "gloss": "from (away)"
+  },
+  "так": {
+   "gloss": "so, like this"
+  },
+  "о": {
+   "gloss": "about"
+  },
+  "всё": {
+   "gloss": "everything, all"
+  },
+  "тот": {
+   "gloss": "that (one)"
+  },
+  "мочь": {
+   "gloss": "can, be able"
+  },
+  "человек": {
+   "gloss": "person, man"
+  },
+  "такой": {
+   "gloss": "such, so"
+  },
+  "ещё": {
+   "gloss": "still, yet, more"
+  },
+  "бы": {
+   "gloss": "would (conditional)"
+  },
+  "себя": {
+   "gloss": "oneself"
+  },
+  "один": {
+   "gloss": "one, alone",
+   "pos": "num"
+  },
+  "сам": {
+   "gloss": "oneself (myself, himself...)"
+  },
+  "вот": {
+   "gloss": "here is, there is"
+  },
+  "говорить": {
+   "gloss": "speak, talk"
+  },
+  "знать": {
+   "gloss": "know",
+   "en": [
+    [
+     "know",
+     "be aware",
+     "be acquainted"
+    ],
+    [
+     "nobility",
+     "aristocracy"
+    ]
+   ]
+  },
+  "стать": {
+   "gloss": "become, begin"
+  },
+  "при": {
+   "gloss": "at, in the presence of"
+  },
+  "чтобы": {
+   "gloss": "in order to, so that"
+  },
+  "день": {
+   "gloss": "day"
+  },
+  "раз": {
+   "gloss": "time (occasion), once"
+  },
+  "там": {
+   "gloss": "there"
+  },
+  "под": {
+   "gloss": "under"
+  },
+  "можно": {
+   "gloss": "one can, it's allowed"
+  },
+  "после": {
+   "gloss": "after"
+  },
+  "без": {
+   "gloss": "without"
+  },
+  "хотеть": {
+   "gloss": "want"
+  },
+  "ли": {
+   "gloss": "whether (question particle)"
+  },
+  "идти": {
+   "gloss": "go (on foot), walk"
+  },
+  "место": {
+   "gloss": "place, seat"
+  },
+  "лицо": {
+   "gloss": "face, person"
+  },
+  "через": {
+   "gloss": "through, across, in (time)"
+  },
+  "да": {
+   "gloss": "yes",
+   "pos": "part"
+  },
+  "здесь": {
+   "gloss": "here"
+  },
+  "потому": {
+   "gloss": "that's why (потому что = because)"
+  },
+  "что-то": {
+   "gloss": "something"
+  },
+  "просто": {
+   "gloss": "simply, just"
+  },
+  "российский": {
+   "gloss": "Russian (of Russia)"
+  },
+  "русский": {
+   "gloss": "Russian (ethnic, language)"
+  },
+  "перед": {
+   "gloss": "in front of, before",
+   "en": [
+    [
+     "in front of",
+     "before"
+    ]
+   ]
+  },
+  "вид": {
+   "gloss": "look, view, kind"
+  },
+  "пойти": {
+   "gloss": "go, set off (on foot)"
+  },
+  "оказаться": {
+   "gloss": "turn out (to be)",
+   "en": [
+    [
+     "turn out",
+     "turn out to be",
+     "be found"
+    ]
+   ]
+  },
+  "являться": {
+   "gloss": "be, appear",
+   "en": [
+    [
+     "be",
+     "appear",
+     "is"
+    ]
+   ]
+  },
+  "стоить": {
+   "gloss": "cost, be worth"
+  },
+  "хорошо": {
+   "gloss": "well, good"
+  },
+  "выйти": {
+   "gloss": "go out, exit"
+  },
+  "много": {
+   "gloss": "a lot, many"
+  },
+  "право": {
+   "gloss": "right, law"
+  },
+  "образ": {
+   "gloss": "image, manner"
+  },
+  "все": {
+   "gloss": "everyone, all",
+   "pos": "pron",
+   "en": [
+    [
+     "everyone",
+     "everybody",
+     "all"
+    ]
+   ]
+  },
+  "больше": {
+   "gloss": "more, bigger"
+  },
+  "маленький": {
+   "gloss": "small, little"
+  },
+  "имя": {
+   "gloss": "name",
+   "en": [
+    [
+     "name",
+     "first name"
+    ],
+    [
+     "reputation"
+    ]
+   ]
+  },
+  "полный": {
+   "gloss": "full",
+   "en": [
+    [
+     "full",
+     "complete"
+    ]
+   ]
+  },
+  "принять": {
+   "gloss": "take, accept"
+  },
+  "пока": {
+   "gloss": "while; bye (informal)"
+  },
+  "свет": {
+   "gloss": "light, world"
+  },
+  "пора": {
+   "gloss": "it's time; season"
+  },
+  "куда": {
+   "gloss": "where (to)",
+   "en": [
+    [
+     "where to",
+     "where",
+     "wherever"
+    ]
+   ]
+  },
+  "нужно": {
+   "gloss": "it's necessary, need"
+  },
+  "лежать": {
+   "gloss": "lie (be lying)",
+   "en": [
+    [
+     "lie",
+     "be lying",
+     "lay"
+    ],
+    [
+     "be situated"
+    ]
+   ]
+  },
+  "качество": {
+   "gloss": "quality",
+   "en": [
+    [
+     "quality"
+    ]
+   ]
+  },
+  "нельзя": {
+   "gloss": "can't, not allowed",
+   "en": [
+    [
+     "can't",
+     "cannot",
+     "not allowed",
+     "it is forbidden"
+    ]
+   ]
+  },
+  "подумать": {
+   "gloss": "think (a bit)",
+   "en": [
+    [
+     "think",
+     "think a little"
+    ]
+   ]
+  },
+  "порядок": {
+   "gloss": "order",
+   "en": [
+    [
+     "order",
+     "sequence",
+     "procedure"
+    ]
+   ]
+  },
+  "следовать": {
+   "gloss": "follow; should"
+  },
+  "бывать": {
+   "gloss": "happen, be (often), visit"
+  },
+  "труд": {
+   "gloss": "labour, work",
+   "en": [
+    [
+     "labour",
+     "labor",
+     "work"
+    ],
+    [
+     "difficulty"
+    ]
+   ]
+  },
+  "прийтись": {
+   "gloss": "have to",
+   "en": [
+    [
+     "have to",
+     "fall to"
+    ],
+    [
+     "fit"
+    ]
+   ]
+  },
+  "хотеться": {
+   "gloss": "feel like, want",
+   "en": [
+    [
+     "feel like",
+     "want",
+     "like"
+    ]
+   ]
+  },
+  "совершенно": {
+   "gloss": "completely, totally"
+  },
+  "смочь": {
+   "gloss": "be able, manage",
+   "en": [
+    [
+     "be able",
+     "can",
+     "manage"
+    ]
+   ]
+  },
+  "как-то": {
+   "gloss": "somehow, once"
+  },
+  "чуть": {
+   "gloss": "slightly, nearly"
+  },
+  "данный": {
+   "gloss": "given, this"
+  },
+  "глава": {
+   "gloss": "head, chapter",
+   "en": [
+    [
+     "head",
+     "chief",
+     "chapter"
+    ]
+   ]
+  },
+  "ход": {
+   "gloss": "move, course"
+  },
+  "наверное": {
+   "gloss": "probably"
+  },
+  "член": {
+   "gloss": "member",
+   "en": [
+    [
+     "member",
+     "limb"
+    ]
+   ]
+  },
+  "ехать": {
+   "gloss": "go (by vehicle), ride",
+   "en": [
+    [
+     "go",
+     "ride",
+     "drive",
+     "travel"
+    ]
+   ]
+  },
+  "точка": {
+   "gloss": "point, dot"
+  },
+  "хоть": {
+   "gloss": "at least, even if"
+  },
+  "лёгкий": {
+   "gloss": "light, easy"
+  },
+  "игра": {
+   "gloss": "game, play",
+   "en": [
+    [
+     "game",
+     "play",
+     "acting"
+    ]
+   ]
+  },
+  "рост": {
+   "gloss": "growth, height",
+   "en": [
+    [
+     "growth",
+     "height",
+     "increase"
+    ]
+   ]
+  },
+  "попасть": {
+   "gloss": "hit, get to"
+  },
+  "использование": {
+   "gloss": "use",
+   "en": [
+    [
+     "use",
+     "utilization",
+     "usage"
+    ]
+   ]
+  },
+  "мировой": {
+   "gloss": "world, global"
+  },
+  "пол": {
+   "gloss": "floor, sex"
+  },
+  "большинство": {
+   "gloss": "majority",
+   "en": [
+    [
+     "majority",
+     "most"
+    ]
+   ]
+  },
+  "составлять": {
+   "gloss": "make up, amount to"
+  },
+  "причём": {
+   "gloss": "moreover, and"
+  },
+  "всего": {
+   "gloss": "in all, only"
+  },
+  "граница": {
+   "gloss": "border, boundary",
+   "en": [
+    [
+     "border",
+     "boundary",
+     "frontier"
+    ],
+    [
+     "abroad"
+    ]
+   ]
+  },
+  "детский": {
+   "gloss": "children's, childish"
+  },
+  "оценка": {
+   "gloss": "grade, assessment",
+   "en": [
+    [
+     "grade",
+     "assessment",
+     "evaluation",
+     "mark"
+    ]
+   ]
+  },
+  "чужой": {
+   "gloss": "someone else's, alien",
+   "en": [
+    [
+     "someone else's",
+     "alien",
+     "foreign",
+     "strange"
+    ],
+    [
+     "stranger"
+    ]
+   ]
+  },
+  "мало": {
+   "gloss": "little, few"
+  },
+  "сколько": {
+   "gloss": "how much, how many"
+  },
+  "малый": {
+   "gloss": "small"
+  },
+  "получиться": {
+   "gloss": "turn out, work out",
+   "en": [
+    [
+     "turn out",
+     "work out",
+     "result"
+    ]
+   ]
+  },
+  "ребята": {
+   "gloss": "guys, kids"
+  },
+  "вовсе": {
+   "gloss": "at all"
+  },
+  "желание": {
+   "gloss": "wish, desire",
+   "en": [
+    [
+     "wish",
+     "desire"
+    ]
+   ]
+  },
+  "папа": {
+   "gloss": "dad",
+   "en": [
+    [
+     "dad",
+     "daddy"
+    ],
+    [
+     "Pope"
+    ]
+   ]
+  },
+  "среда": {
+   "gloss": "Wednesday; environment"
+  },
+  "выступать": {
+   "gloss": "perform, speak (publicly)",
+   "en": [
+    [
+     "perform",
+     "speak",
+     "appear"
+    ],
+    [
+     "protrude",
+     "stand out"
+    ]
+   ]
+  },
+  "содержание": {
+   "gloss": "content, maintenance",
+   "en": [
+    [
+     "content",
+     "contents"
+    ],
+    [
+     "maintenance",
+     "upkeep"
+    ]
+   ]
+  },
+  "рабочий": {
+   "gloss": "working; worker"
+  },
+  "знакомый": {
+   "gloss": "familiar; acquaintance"
+  },
+  "отсутствие": {
+   "gloss": "absence, lack",
+   "en": [
+    [
+     "absence",
+     "lack"
+    ]
+   ]
+  },
+  "плохо": {
+   "gloss": "badly, bad",
+   "en": [
+    [
+     "badly",
+     "bad",
+     "poorly"
+    ]
+   ]
+  },
+  "иметься": {
+   "gloss": "there is, be available",
+   "en": [
+    [
+     "there is",
+     "there are",
+     "be available",
+     "have"
+    ]
+   ]
+  },
+  "получаться": {
+   "gloss": "turn out, work out",
+   "en": [
+    [
+     "turn out",
+     "work out",
+     "get"
+    ]
+   ]
+  },
+  "немец": {
+   "gloss": "German (person)"
+  },
+  "немецкий": {
+   "gloss": "German (adj.)"
+  },
+  "лист": {
+   "gloss": "leaf, sheet",
+   "en": [
+    [
+     "leaf",
+     "sheet"
+    ]
+   ]
+  },
+  "проведение": {
+   "gloss": "carrying out, holding",
+   "en": [
+    [
+     "carrying out",
+     "holding",
+     "conducting"
+    ]
+   ]
+  },
+  "разработка": {
+   "gloss": "development",
+   "en": [
+    [
+     "development",
+     "design"
+    ],
+    [
+     "working",
+     "exploitation"
+    ]
+   ]
+  },
+  "бой": {
+   "gloss": "battle, fight",
+   "en": [
+    [
+     "battle",
+     "fight",
+     "combat"
+    ]
+   ]
+  },
+  "подходить": {
+   "gloss": "approach; suit",
+   "en": [
+    [
+     "approach",
+     "come up"
+    ],
+    [
+     "fit",
+     "suit"
+    ]
+   ]
+  },
+  "род": {
+   "gloss": "kind, family, gender"
+  },
+  "воля": {
+   "gloss": "will, freedom",
+   "en": [
+    [
+     "will",
+     "freedom",
+     "liberty"
+    ]
+   ]
+  },
+  "приходиться": {
+   "gloss": "have to"
+  },
+  "поехать": {
+   "gloss": "go (by vehicle)"
+  },
+  "уехать": {
+   "gloss": "leave (by vehicle)"
+  },
+  "уйти": {
+   "gloss": "leave (on foot)"
+  },
+  "прийти": {
+   "gloss": "come, arrive (on foot)"
+  },
+  "приехать": {
+   "gloss": "arrive (by vehicle)"
+  },
+  "ходить": {
+   "gloss": "go, walk (habitually)"
+  },
+  "пара": {
+   "gloss": "pair, couple"
+  },
+  "американский": {
+   "gloss": "American"
+  },
+  "весьма": {
+   "gloss": "very, highly",
+   "en": [
+    [
+     "very",
+     "highly",
+     "extremely",
+     "greatly"
+    ]
+   ]
+  },
+  "удар": {
+   "gloss": "blow, strike",
+   "en": [
+    [
+     "blow",
+     "kick",
+     "stroke",
+     "strike",
+     "impact"
+    ]
+   ]
+  },
+  "доктор": {
+   "gloss": "doctor"
+  },
+  "оба": {
+   "gloss": "both",
+   "pos": "num"
+  },
+  "третий": {
+   "gloss": "third",
+   "pos": "num"
+  },
+  "четыре": {
+   "gloss": "four",
+   "pos": "num"
+  },
+  "десять": {
+   "gloss": "ten",
+   "pos": "num"
+  },
+  "двадцать": {
+   "gloss": "twenty",
+   "pos": "num"
+  },
+  "шесть": {
+   "gloss": "six",
+   "pos": "num"
+  },
+  "сто": {
+   "gloss": "hundred",
+   "pos": "num"
+  },
+  "миллион": {
+   "gloss": "million"
+  },
+  "тысяча": {
+   "gloss": "thousand"
+  },
+  "далёкий": {
+   "gloss": "far, distant"
+  },
+  "век": {
+   "gloss": "century, age"
+  },
+  "поэтому": {
+   "gloss": "therefore, so"
+  },
+  "достаточно": {
+   "gloss": "enough, sufficiently"
+  },
+  "возможно": {
+   "gloss": "possibly, it's possible"
+  },
+  "известно": {
+   "gloss": "it is known"
+  },
+  "тихо": {
+   "gloss": "quietly"
+  },
+  "кстати": {
+   "gloss": "by the way"
+  },
+  "впрочем": {
+   "gloss": "however, though"
+  },
+  "звезда": {
+   "gloss": "star"
+  },
+  "сестра": {
+   "gloss": "sister, nurse"
+  },
+  "предложение": {
+   "gloss": "sentence; offer"
+  },
+  "дорогой": {
+   "gloss": "expensive; dear"
+  },
+  "свободный": {
+   "gloss": "free"
+  },
+  "мужик": {
+   "gloss": "guy, peasant"
+  },
+  "хватать": {
+   "gloss": "be enough; grab"
+  },
+  "звать": {
+   "gloss": "call"
+  },
+  "сон": {
+   "gloss": "sleep, dream"
+  },
+  "среди": {
+   "gloss": "among"
+  },
+  "ряд": {
+   "gloss": "row, series"
+  },
+  "счёт": {
+   "gloss": "bill, account, score",
+   "en": [
+    [
+     "bill",
+     "check",
+     "account"
+    ],
+    [
+     "score",
+     "count"
+    ]
+   ]
+  },
+  "число": {
+   "gloss": "number, date"
+  },
+  "наш": {
+   "gloss": "our"
+  },
+  "домой": {
+   "gloss": "home (homeward)",
+   "en": [
+    [
+     "home",
+     "homeward"
+    ]
+   ]
+  },
+  "дома": {
+   "gloss": "at home",
+   "en": [
+    [
+     "at home",
+     "home"
+    ]
+   ]
+  },
+  "есть": {
+   "gloss": "eat"
+  },
+  "пять": {
+   "gloss": "five",
+   "pos": "num"
+  },
+  "семь": {
+   "gloss": "seven",
+   "pos": "num"
+  },
+  "восемь": {
+   "gloss": "eight",
+   "pos": "num"
+  },
+  "девять": {
+   "gloss": "nine",
+   "pos": "num"
+  },
+  "привет": {
+   "gloss": "hi, hello"
+  },
+  "спасибо": {
+   "gloss": "thank you, thanks",
+   "en": [
+    [
+     "thank you",
+     "thanks"
+    ]
+   ]
+  },
+  "пожалуйста": {
+   "gloss": "please; you're welcome"
+  },
+  "извинить": {
+   "gloss": "excuse, forgive"
+  },
+  "чай": {
+   "gloss": "tea",
+   "en": [
+    [
+     "tea"
+    ]
+   ]
+  },
+  "овощ": {
+   "gloss": "vegetable"
+  },
+  "фрукт": {
+   "gloss": "fruit"
+  },
+  "холодно": {
+   "gloss": "cold (it's cold)"
+  },
+  "жарко": {
+   "gloss": "hot (it's hot)"
+  },
+  "тепло": {
+   "gloss": "warm (it's warm); warmth"
+  },
+  "устать": {
+   "gloss": "get tired"
+  },
+  "мыть": {
+   "gloss": "wash"
+  },
+  "готовить": {
+   "gloss": "cook, prepare"
+  }
+ },
+ "extra": [
+  "есть",
+  "кошка",
+  "хлеб",
+  "молоко",
+  "чай",
+  "кофе",
+  "синий",
+  "жёлтый",
+  "привет",
+  "спасибо",
+  "пожалуйста",
+  "извинить",
+  "учитель",
+  "ученик",
+  "подруга",
+  "поезд",
+  "стул",
+  "пять",
+  "семь",
+  "восемь",
+  "девять",
+  "мясо",
+  "рыба",
+  "яблоко",
+  "сок",
+  "пиво",
+  "вино",
+  "суп",
+  "завтрак",
+  "обед",
+  "ужин",
+  "вокзал",
+  "метро",
+  "билет",
+  "гостиница",
+  "больница",
+  "аэропорт",
+  "понедельник",
+  "вторник",
+  "среда",
+  "четверг",
+  "пятница",
+  "суббота",
+  "воскресенье",
+  "зима",
+  "весна",
+  "осень",
+  "утро",
+  "бабушка",
+  "дедушка",
+  "сыр",
+  "сахар",
+  "овощ",
+  "фрукт",
+  "рубашка",
+  "платье",
+  "обувь",
+  "шапка",
+  "автобус",
+  "такси",
+  "дождь",
+  "холодно",
+  "жарко",
+  "тепло",
+  "улыбка",
+  "кот",
+  "птица",
+  "лошадь",
+  "корова",
+  "медведь",
+  "волк",
+  "мышь",
+  "гора",
+  "озеро",
+  "остров",
+  "поле",
+  "небо",
+  "луна",
+  "снег",
+  "лёд",
+  "голодный",
+  "устать",
+  "спешить",
+  "танцевать",
+  "плавать",
+  "готовить",
+  "мыть",
+  "купаться",
+  "отдыхать"
+ ],
+ "add": [
+  {
+   "bare": "наш",
+   "ru": "наш",
+   "pos": "pron",
+   "en": [
+    [
+     "our",
+     "ours"
+    ]
+   ],
+   "gloss": "our",
+   "ipm": 1731.8
+  },
+  {
+   "bare": "ваш",
+   "ru": "ваш",
+   "pos": "pron",
+   "en": [
+    [
+     "your",
+     "yours"
+    ]
+   ],
+   "gloss": "your (plural/formal)",
+   "ipm": 547.5
+  }
+ ]
+}
