@@ -150,6 +150,7 @@ def main():
         return g if len(g) <= 40 else items[0]
 
     used = set()
+    seen_bare = set()
     words = []
     for lemma, pos, ipm in rnc:
         if len(words) >= n:
@@ -168,6 +169,10 @@ def main():
         if row is None:
             continue
         used.add((row['_file'], row['_order']))
+        # Homographs (стать "become" vs стать "build, figure"): keep only the more frequent one
+        if row['bare'] in seen_bare:
+            continue
+        seen_bare.add(row['bare'])
         senses = split_senses(row['translations_en'], verb=row['_file'] == 'verbs', lower=row['_file'] in ('verbs', 'others'))
         if not senses:
             continue

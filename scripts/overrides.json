@@ -10,7 +10,10 @@
   "об",
   "чтоб",
   "же",
-  "больший"
+  "больший",
+  "чего",
+  "ять",
+  "сё"
  ],
  "fix": {
   "в": {
@@ -1263,6 +1266,1077 @@
   },
   "олимпиада": {
    "gloss": "Olympics, olympiad"
+  },
+  "звонить": {
+   "gloss": "call, ring"
+  },
+  "множество": {
+   "gloss": "multitude, a great many"
+  },
+  "показатель": {
+   "gloss": "indicator, index"
+  },
+  "частность": {
+   "gloss": "detail (в частности = in particular)"
+  },
+  "колено": {
+   "gloss": "knee"
+  },
+  "наоборот": {
+   "gloss": "on the contrary, the other way round"
+  },
+  "газ": {
+   "gloss": "gas"
+  },
+  "информационный": {
+   "gloss": "information, informational"
+  },
+  "летний": {
+   "gloss": "summer"
+  },
+  "лесной": {
+   "gloss": "forest"
+  },
+  "фигура": {
+   "gloss": "figure"
+  },
+  "субъект": {
+   "gloss": "subject"
+  },
+  "помещение": {
+   "gloss": "premises, room"
+  },
+  "зависимость": {
+   "gloss": "dependence, addiction"
+  },
+  "милый": {
+   "gloss": "dear, sweet"
+  },
+  "князь": {
+   "gloss": "prince"
+  },
+  "дума": {
+   "gloss": "duma, thought"
+  },
+  "лететь": {
+   "gloss": "fly"
+  },
+  "дача": {
+   "gloss": "dacha, country house"
+  },
+  "установка": {
+   "gloss": "installation, setting"
+  },
+  "сложиться": {
+   "gloss": "turn out, take shape"
+  },
+  "учреждение": {
+   "gloss": "institution"
+  },
+  "черта": {
+   "gloss": "trait, line"
+  },
+  "попытаться": {
+   "gloss": "try, attempt"
+  },
+  "расположить": {
+   "gloss": "arrange, place"
+  },
+  "исключение": {
+   "gloss": "exception, exclusion"
+  },
+  "перевод": {
+   "gloss": "translation, transfer"
+  },
+  "слух": {
+   "gloss": "hearing, rumour"
+  },
+  "учить": {
+   "gloss": "teach, learn"
+  },
+  "обстановка": {
+   "gloss": "situation, setting"
+  },
+  "блок": {
+   "gloss": "block, bloc"
+  },
+  "назначение": {
+   "gloss": "appointment, purpose"
+  },
+  "книжка": {
+   "gloss": "little book, booklet"
+  },
+  "подписать": {
+   "gloss": "sign"
+  },
+  "тяжело": {
+   "gloss": "hard, with difficulty"
+  },
+  "камера": {
+   "gloss": "camera, cell"
+  },
+  "шутка": {
+   "gloss": "joke"
+  },
+  "кулак": {
+   "gloss": "fist"
+  },
+  "корпус": {
+   "gloss": "building, corps"
+  },
+  "согласный": {
+   "gloss": "in agreement"
+  },
+  "рад": {
+   "gloss": "glad"
+  },
+  "готовиться": {
+   "gloss": "prepare, get ready"
+  },
+  "страдать": {
+   "gloss": "suffer"
+  },
+  "кость": {
+   "gloss": "bone"
+  },
+  "особо": {
+   "gloss": "especially, particularly"
+  },
+  "закончиться": {
+   "gloss": "end, come to an end"
+  },
+  "зеркало": {
+   "gloss": "mirror"
+  },
+  "каменный": {
+   "gloss": "stone"
+  },
+  "заключить": {
+   "gloss": "conclude, sign"
+  },
+  "жалко": {
+   "gloss": "it's a pity, what a shame"
+  },
+  "указывать": {
+   "gloss": "point out, indicate"
+  },
+  "вооружённый": {
+   "gloss": "armed"
+  },
+  "арбитражный": {
+   "gloss": "arbitration"
+  },
+  "транспортный": {
+   "gloss": "transport"
+  },
+  "торговый": {
+   "gloss": "trade, commercial"
+  },
+  "мужской": {
+   "gloss": "male, masculine"
+  },
+  "производитель": {
+   "gloss": "producer, manufacturer"
+  },
+  "пыль": {
+   "gloss": "dust"
+  },
+  "объяснение": {
+   "gloss": "explanation"
+  },
+  "автомат": {
+   "gloss": "machine gun, vending machine"
+  },
+  "сдать": {
+   "gloss": "hand in, rent out"
+  },
+  "оценить": {
+   "gloss": "evaluate, appreciate"
+  },
+  "присутствие": {
+   "gloss": "presence"
+  },
+  "выступить": {
+   "gloss": "speak, perform"
+  },
+  "предстоять": {
+   "gloss": "lie ahead, be in store"
+  },
+  "отмечать": {
+   "gloss": "note, celebrate"
+  },
+  "общение": {
+   "gloss": "communication, contact"
+  },
+  "проводиться": {
+   "gloss": "be held"
+  },
+  "двое": {
+   "gloss": "two (people)"
+  },
+  "трое": {
+   "gloss": "three (people)"
+  },
+  "депутат": {
+   "gloss": "deputy, MP"
+  },
+  "дядя": {
+   "gloss": "uncle"
+  },
+  "учёт": {
+   "gloss": "accounting, record"
+  },
+  "поиск": {
+   "gloss": "search"
+  },
+  "режиссёр": {
+   "gloss": "director (film, theatre)"
+  },
+  "кадр": {
+   "gloss": "frame, shot"
+  },
+  "придумать": {
+   "gloss": "think up, invent"
+  },
+  "наблюдать": {
+   "gloss": "observe, watch"
+  },
+  "женский": {
+   "gloss": "female, women's"
+  },
+  "мероприятие": {
+   "gloss": "event, measure"
+  },
+  "исходить": {
+   "gloss": "come from, proceed from"
+  },
+  "заняться": {
+   "gloss": "take up, busy oneself"
+  },
+  "изображение": {
+   "gloss": "image, picture"
+  },
+  "сочинение": {
+   "gloss": "essay, composition"
+  },
+  "танк": {
+   "gloss": "tank"
+  },
+  "химический": {
+   "gloss": "chemical"
+  },
+  "сохраниться": {
+   "gloss": "be preserved, remain"
+  },
+  "вокзал": {
+   "gloss": "railway station"
+  },
+  "прокуратура": {
+   "gloss": "prosecutor's office"
+  },
+  "пожать": {
+   "gloss": "shake (hands)"
+  },
+  "отличный": {
+   "gloss": "excellent"
+  },
+  "распределение": {
+   "gloss": "distribution"
+  },
+  "постановка": {
+   "gloss": "staging, production"
+  },
+  "ствол": {
+   "gloss": "trunk, barrel"
+  },
+  "адвокат": {
+   "gloss": "lawyer"
+  },
+  "инвестиция": {
+   "gloss": "investment"
+  },
+  "десятилетие": {
+   "gloss": "decade"
+  },
+  "отчёт": {
+   "gloss": "report, account"
+  },
+  "вооружение": {
+   "gloss": "arms, armament"
+  },
+  "зимний": {
+   "gloss": "winter"
+  },
+  "испугаться": {
+   "gloss": "get scared"
+  },
+  "спрос": {
+   "gloss": "demand"
+  },
+  "борт": {
+   "gloss": "side, board"
+  },
+  "мотив": {
+   "gloss": "motive, tune"
+  },
+  "повести": {
+   "gloss": "lead, take"
+  },
+  "отряд": {
+   "gloss": "squad, detachment"
+  },
+  "церковный": {
+   "gloss": "church"
+  },
+  "отсутствовать": {
+   "gloss": "be absent"
+  },
+  "громкий": {
+   "gloss": "loud"
+  },
+  "политик": {
+   "gloss": "politician"
+  },
+  "заложить": {
+   "gloss": "lay, pawn"
+  },
+  "девчонка": {
+   "gloss": "girl"
+  },
+  "питание": {
+   "gloss": "nutrition, food"
+  },
+  "важнейший": {
+   "gloss": "most important"
+  },
+  "тётка": {
+   "gloss": "aunt"
+  },
+  "крутой": {
+   "gloss": "steep, cool"
+  },
+  "обида": {
+   "gloss": "resentment, offence"
+  },
+  "гонка": {
+   "gloss": "race"
+  },
+  "мина": {
+   "gloss": "mine, facial expression"
+  },
+  "пластинка": {
+   "gloss": "record, plate"
+  },
+  "обрадоваться": {
+   "gloss": "be glad"
+  },
+  "покупка": {
+   "gloss": "purchase"
+  },
+  "ровно": {
+   "gloss": "exactly, evenly"
+  },
+  "дождаться": {
+   "gloss": "wait for"
+  },
+  "боец": {
+   "gloss": "fighter, soldier"
+  },
+  "завести": {
+   "gloss": "start, acquire"
+  },
+  "складываться": {
+   "gloss": "take shape, form"
+  },
+  "ведение": {
+   "gloss": "conducting, management"
+  },
+  "выстрел": {
+   "gloss": "shot"
+  },
+  "надоесть": {
+   "gloss": "bore, get on one's nerves"
+  },
+  "половой": {
+   "gloss": "sexual, floor"
+  },
+  "кой": {
+   "gloss": "which"
+  },
+  "белок": {
+   "gloss": "protein, egg white"
+  },
+  "махнуть": {
+   "gloss": "wave"
+  },
+  "мука": {
+   "gloss": "flour, torment"
+  },
+  "душевный": {
+   "gloss": "heartfelt, sincere"
+  },
+  "мелочь": {
+   "gloss": "trifle, small change"
+  },
+  "нету": {
+   "gloss": "there isn't, no"
+  },
+  "земельный": {
+   "gloss": "land"
+  },
+  "молодец": {
+   "gloss": "well done, good fellow"
+  },
+  "протяжение": {
+   "gloss": "extent, length"
+  },
+  "водный": {
+   "gloss": "water"
+  },
+  "пояснить": {
+   "gloss": "explain, clarify"
+  },
+  "применяться": {
+   "gloss": "be used, be applied"
+  },
+  "банковский": {
+   "gloss": "bank, banking"
+  },
+  "цех": {
+   "gloss": "workshop (in a factory)"
+  },
+  "бумажка": {
+   "gloss": "piece of paper"
+  },
+  "жилой": {
+   "gloss": "residential"
+  },
+  "дон": {
+   "gloss": "Don (river)"
+  },
+  "рекомендовать": {
+   "gloss": "recommend"
+  },
+  "плита": {
+   "gloss": "stove, slab"
+  },
+  "оценивать": {
+   "gloss": "evaluate, assess"
+  },
+  "ленинградский": {
+   "gloss": "Leningrad"
+  },
+  "вуз": {
+   "gloss": "university, college"
+  },
+  "жанр": {
+   "gloss": "genre"
+  },
+  "поправка": {
+   "gloss": "amendment, correction"
+  },
+  "пробовать": {
+   "gloss": "try, taste"
+  },
+  "экспедиция": {
+   "gloss": "expedition"
+  },
+  "подвести": {
+   "gloss": "let down, bring"
+  },
+  "слышно": {
+   "gloss": "can be heard"
+  },
+  "изо": {
+   "gloss": "from (= из)"
+  },
+  "экипаж": {
+   "gloss": "crew, carriage"
+  },
+  "россиянин": {
+   "gloss": "Russian (citizen)"
+  },
+  "сдавать": {
+   "gloss": "hand in, take (an exam)"
+  },
+  "незаметно": {
+   "gloss": "imperceptibly, unnoticed"
+  },
+  "лампа": {
+   "gloss": "lamp"
+  },
+  "быт": {
+   "gloss": "everyday life"
+  },
+  "малыш": {
+   "gloss": "little one, kid"
+  },
+  "доверять": {
+   "gloss": "trust"
+  },
+  "обусловить": {
+   "gloss": "determine, cause"
+  },
+  "законопроект": {
+   "gloss": "bill (law)"
+  },
+  "бассейн": {
+   "gloss": "swimming pool, basin"
+  },
+  "здорово": {
+   "gloss": "great, well done"
+  },
+  "инстанция": {
+   "gloss": "authority, instance"
+  },
+  "возглавлять": {
+   "gloss": "head, lead"
+  },
+  "актив": {
+   "gloss": "assets"
+  },
+  "вдвоём": {
+   "gloss": "the two of us, together"
+  },
+  "печь": {
+   "gloss": "stove, oven; bake"
+  },
+  "трасса": {
+   "gloss": "route, highway"
+  },
+  "градус": {
+   "gloss": "degree"
+  },
+  "кабина": {
+   "gloss": "cab, booth"
+  },
+  "угодно": {
+   "gloss": "you like (как угодно = as you like)"
+  },
+  "орудие": {
+   "gloss": "tool, gun"
+  },
+  "аудитория": {
+   "gloss": "audience, lecture hall"
+  },
+  "помешать": {
+   "gloss": "prevent, hinder"
+  },
+  "борода": {
+   "gloss": "beard"
+  },
+  "таможенный": {
+   "gloss": "customs"
+  },
+  "тащить": {
+   "gloss": "drag, pull"
+  },
+  "вот-вот": {
+   "gloss": "any moment now"
+  },
+  "развернуть": {
+   "gloss": "unfold, turn around"
+  },
+  "блюдо": {
+   "gloss": "dish"
+  },
+  "посадка": {
+   "gloss": "landing, boarding"
+  },
+  "боевик": {
+   "gloss": "action film, militant"
+  },
+  "вредный": {
+   "gloss": "harmful"
+  },
+  "книжный": {
+   "gloss": "book"
+  },
+  "перспективный": {
+   "gloss": "promising"
+  },
+  "целиком": {
+   "gloss": "entirely, whole"
+  },
+  "повысить": {
+   "gloss": "raise, promote"
+  },
+  "по-русски": {
+   "gloss": "in Russian"
+  },
+  "предоставление": {
+   "gloss": "provision, granting"
+  },
+  "наступление": {
+   "gloss": "offensive, onset"
+  },
+  "оформление": {
+   "gloss": "design, registration"
+  },
+  "засыпать": {
+   "gloss": "fall asleep, fill up"
+  },
+  "кафедра": {
+   "gloss": "department (university), pulpit"
+  },
+  "распахнуть": {
+   "gloss": "fling open"
+  },
+  "устроиться": {
+   "gloss": "settle in, get a job"
+  },
+  "сборник": {
+   "gloss": "collection (of works)"
+  },
+  "сталинский": {
+   "gloss": "Stalin's"
+  },
+  "папка": {
+   "gloss": "folder"
+  },
+  "свести": {
+   "gloss": "bring together, reduce"
+  },
+  "сбить": {
+   "gloss": "knock down"
+  },
+  "стрельба": {
+   "gloss": "shooting"
+  },
+  "внедрение": {
+   "gloss": "introduction, implementation"
+  },
+  "варить": {
+   "gloss": "cook, boil"
+  },
+  "полететь": {
+   "gloss": "fly off"
+  },
+  "чуть-чуть": {
+   "gloss": "a little bit"
+  },
+  "намного": {
+   "gloss": "much, far"
+  },
+  "расстрелять": {
+   "gloss": "shoot (execute)"
+  },
+  "листок": {
+   "gloss": "leaf, sheet"
+  },
+  "решётка": {
+   "gloss": "grille, bars"
+  },
+  "торжество": {
+   "gloss": "celebration, triumph"
+  },
+  "задумываться": {
+   "gloss": "think about, ponder"
+  },
+  "выносить": {
+   "gloss": "carry out, endure"
+  },
+  "перебить": {
+   "gloss": "interrupt, kill off"
+  },
+  "скважина": {
+   "gloss": "well, borehole"
+  },
+  "огород": {
+   "gloss": "vegetable garden"
+  },
+  "сырой": {
+   "gloss": "raw, damp"
+  },
+  "заканчиваться": {
+   "gloss": "end, come to an end"
+  },
+  "оформить": {
+   "gloss": "draw up, register"
+  },
+  "девка": {
+   "gloss": "girl, wench"
+  },
+  "осенний": {
+   "gloss": "autumn"
+  },
+  "пушкинский": {
+   "gloss": "Pushkin's"
+  },
+  "уступать": {
+   "gloss": "give way, yield"
+  },
+  "комбинат": {
+   "gloss": "industrial complex"
+  },
+  "местность": {
+   "gloss": "area, terrain"
+  },
+  "потянуться": {
+   "gloss": "stretch, reach"
+  },
+  "весенний": {
+   "gloss": "spring"
+  },
+  "авторский": {
+   "gloss": "author's"
+  },
+  "носитель": {
+   "gloss": "carrier, native speaker"
+  },
+  "обсуждаться": {
+   "gloss": "be discussed"
+  },
+  "возрождение": {
+   "gloss": "revival, Renaissance"
+  },
+  "сниться": {
+   "gloss": "dream (appear in a dream)"
+  },
+  "переехать": {
+   "gloss": "move (house), run over"
+  },
+  "силовой": {
+   "gloss": "power, security"
+  },
+  "механический": {
+   "gloss": "mechanical"
+  },
+  "платформа": {
+   "gloss": "platform"
+  },
+  "облегчение": {
+   "gloss": "relief"
+  },
+  "продаваться": {
+   "gloss": "be sold, be on sale"
+  },
+  "заметка": {
+   "gloss": "note, article"
+  },
+  "личной": {
+   "gloss": "personal"
+  },
+  "преподобный": {
+   "gloss": "reverend"
+  },
+  "барак": {
+   "gloss": "barracks, hut"
+  },
+  "сыворотка": {
+   "gloss": "serum, whey"
+  },
+  "сволочь": {
+   "gloss": "bastard, scum"
+  },
+  "кремлёвский": {
+   "gloss": "Kremlin"
+  },
+  "лук": {
+   "gloss": "onion, bow"
+  },
+  "фантастический": {
+   "gloss": "fantastic"
+  },
+  "машинка": {
+   "gloss": "typewriter, little car"
+  },
+  "поделать": {
+   "gloss": "do (nothing can be done)"
+  },
+  "колодец": {
+   "gloss": "well"
+  },
+  "чин": {
+   "gloss": "rank"
+  },
+  "нестись": {
+   "gloss": "rush, lay eggs"
+  },
+  "кислота": {
+   "gloss": "acid"
+  },
+  "армейский": {
+   "gloss": "army"
+  },
+  "застынуть": {
+   "gloss": "freeze, set"
+  },
+  "мясной": {
+   "gloss": "meat"
+  },
+  "актёрский": {
+   "gloss": "acting, actor's"
+  },
+  "головка": {
+   "gloss": "little head, head"
+  },
+  "открыто": {
+   "gloss": "openly"
+  },
+  "пропаганда": {
+   "gloss": "propaganda"
+  },
+  "ленинский": {
+   "gloss": "Lenin's"
+  },
+  "собачий": {
+   "gloss": "dog's, canine"
+  },
+  "рак": {
+   "gloss": "crayfish, cancer"
+  },
+  "кузов": {
+   "gloss": "body (of a vehicle)"
+  },
+  "целевой": {
+   "gloss": "targeted, special-purpose"
+  },
+  "мучительный": {
+   "gloss": "painful, agonizing"
+  },
+  "сводиться": {
+   "gloss": "come down to, boil down to"
+  },
+  "мелькнуть": {
+   "gloss": "flash, flicker"
+  },
+  "бумажный": {
+   "gloss": "paper"
+  },
+  "кадровый": {
+   "gloss": "personnel, career"
+  },
+  "представительство": {
+   "gloss": "representation, mission"
+  },
+  "уравнение": {
+   "gloss": "equation"
+  },
+  "заяц": {
+   "gloss": "hare"
+  },
+  "организационный": {
+   "gloss": "organizational"
+  },
+  "склонный": {
+   "gloss": "inclined, prone"
+  },
+  "сочинять": {
+   "gloss": "write, compose"
+  },
+  "освободиться": {
+   "gloss": "become free, get free"
+  },
+  "пробка": {
+   "gloss": "cork, traffic jam"
+  },
+  "уютный": {
+   "gloss": "cosy, comfortable"
+  },
+  "отнестись": {
+   "gloss": "treat, relate to"
+  },
+  "перечислить": {
+   "gloss": "list, transfer"
+  },
+  "разведчик": {
+   "gloss": "scout, intelligence agent"
+  },
+  "свалиться": {
+   "gloss": "fall down"
+  },
+  "палочка": {
+   "gloss": "stick, wand"
+  },
+  "светить": {
+   "gloss": "shine"
+  },
+  "увлечение": {
+   "gloss": "passion, hobby"
+  },
+  "уступить": {
+   "gloss": "give way, yield"
+  },
+  "милицейский": {
+   "gloss": "police"
+  },
+  "феномен": {
+   "gloss": "phenomenon"
+  },
+  "погодить": {
+   "gloss": "wait a bit"
+  },
+  "специфика": {
+   "gloss": "specifics"
+  },
+  "очко": {
+   "gloss": "point"
+  },
+  "возмутиться": {
+   "gloss": "be outraged"
+  },
+  "психика": {
+   "gloss": "psyche, mind"
+  },
+  "спичка": {
+   "gloss": "match"
+  },
+  "закономерность": {
+   "gloss": "pattern, regularity"
+  },
+  "исполниться": {
+   "gloss": "come true, turn (age)"
+  },
+  "производительность": {
+   "gloss": "productivity"
+  },
+  "сдача": {
+   "gloss": "change (money), surrender"
+  },
+  "тем": {
+   "gloss": "(чем... тем) the... the"
+  },
+  "выработка": {
+   "gloss": "output, production"
+  },
+  "крестьянский": {
+   "gloss": "peasant"
+  },
+  "грандиозный": {
+   "gloss": "grand, tremendous"
+  },
+  "гуманитарный": {
+   "gloss": "humanitarian, humanities"
+  },
+  "дабы": {
+   "gloss": "in order to"
+  },
+  "лёгкое": {
+   "gloss": "lung"
+  },
+  "лошадиный": {
+   "gloss": "horse"
+  },
+  "полотно": {
+   "gloss": "canvas, linen"
+  },
+  "старательно": {
+   "gloss": "diligently"
+  },
+  "гудеть": {
+   "gloss": "hum, buzz"
+  },
+  "пропуск": {
+   "gloss": "pass, absence"
+  },
+  "батюшка": {
+   "gloss": "father (priest)"
+  },
+  "газетный": {
+   "gloss": "newspaper"
+  },
+  "горечь": {
+   "gloss": "bitterness"
+  },
+  "кора": {
+   "gloss": "bark, crust"
+  },
+  "песнь": {
+   "gloss": "song"
+  },
+  "погон": {
+   "gloss": "shoulder strap"
+  },
+  "одиночка": {
+   "gloss": "loner"
+  },
+  "порождать": {
+   "gloss": "generate, give rise to"
+  },
+  "киевский": {
+   "gloss": "Kiev"
+  },
+  "переписка": {
+   "gloss": "correspondence"
+  },
+  "должный": {
+   "gloss": "due, proper"
+  },
+  "спуск": {
+   "gloss": "descent, slope"
+  },
+  "тюремный": {
+   "gloss": "prison"
+  },
+  "процентный": {
+   "gloss": "percentage, interest"
+  },
+  "папироса": {
+   "gloss": "cigarette (papirosa)"
+  },
+  "разводить": {
+   "gloss": "breed, dilute"
+  },
+  "ять": {
+   "gloss": "yat (old letter)"
+  },
+  "лагерный": {
+   "gloss": "camp"
+  },
+  "стукнуть": {
+   "gloss": "knock, bang"
+  },
+  "бывало": {
+   "gloss": "used to"
+  },
+  "грамота": {
+   "gloss": "literacy, charter"
+  },
+  "интервал": {
+   "gloss": "interval"
+  },
+  "футбольный": {
+   "gloss": "football"
+  },
+  "подводить": {
+   "gloss": "let down, bring up"
+  },
+  "панель": {
+   "gloss": "panel"
+  },
+  "кое-как": {
+   "gloss": "somehow, carelessly"
+  },
+  "удостоверение": {
+   "gloss": "certificate, ID card"
+  },
+  "офицерский": {
+   "gloss": "officer's"
+  },
+  "пройтись": {
+   "gloss": "take a stroll"
+  },
+  "потребительский": {
+   "gloss": "consumer"
+  },
+  "возрастной": {
+   "gloss": "age"
+  },
+  "заготовка": {
+   "gloss": "preparation, blank"
+  },
+  "тяга": {
+   "gloss": "draught, traction"
+  },
+  "пятёрка": {
+   "gloss": "five, top mark"
+  },
+  "почка": {
+   "gloss": "kidney, bud"
+  },
+  "дрогнуть": {
+   "gloss": "flinch, waver"
   }
  },
  "extra": [
