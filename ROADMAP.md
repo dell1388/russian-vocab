@@ -10,10 +10,10 @@ from the first unticked item. Keep each milestone playable.
 - [ ] Second pass review of glosses for words 300–1085 (look for odd 2nd items like "morn")
 
 ## M1 — Vocab engine
-- [ ] `js/text.js`: normalize, stress strip, ё=е, Latin→Cyrillic translit, Levenshtein, answer check
-- [ ] `js/srs.js`: Leitner boxes, due times, weighted pick, new-word pacing
-- [ ] `js/data.js`: load words, bands, POS filter, distractor picking (same POS, no gloss overlap)
-- [ ] Unit tests (`tests/*.test.mjs`)
+- [x] `js/text.js`: normalize, stress strip, ё=е, Latin→Cyrillic translit, Levenshtein, answer check
+- [x] `js/srs.js`: Leitner boxes, due times, weighted pick, new-word pacing
+- [x] `js/data.js`: load words, bands, POS filter, distractor picking (same POS, no gloss overlap)
+- [x] Unit tests (`tests/*.test.mjs`)
 
 ## M2 — Core game (v1 playable)
 - [ ] Screens: title, character select, run setup (mode/easy), map, combat, reward, shop, rest, event, game over, victory
