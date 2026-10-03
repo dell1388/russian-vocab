@@ -17,7 +17,7 @@ import { portrait, star, badge } from './art.js';
 import { show, $, $$, esc, modal, toast } from './ui.js';
 
 progress.onNotify((n) => {
-  toast(n.title, n.text, n.kind === 'ach' ? 'ach' : n.kind === 'unlock' ? 'relic' : 'good');
+  toast(n.title, n.text, n.kind === 'ach' ? 'ach' : n.kind === 'unlock' || n.kind === 'synergy' ? 'relic' : 'good');
   if (n.kind !== 'level') audio.sfx('relic');
 });
 

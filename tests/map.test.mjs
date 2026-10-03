@@ -36,3 +36,12 @@ test('content references are valid', () => {
   for (const e of EVENTS) assert.ok(e.choices.length >= 2, e.id);
   for (const c of Object.values(CHARACTERS)) assert.ok(c.hp > 0 && c.dmg > 0);
 });
+
+test('synergies reference real relics', async () => {
+  const { SYNERGIES, activeSynergies } = await import('../js/content/relics.js');
+  for (const [id, s] of Object.entries(SYNERGIES)) {
+    assert.ok(s.relics.length >= 2, id);
+    for (const r of s.relics) assert.ok(RELICS[r], `${id}: ${r}`);
+  }
+  assert.deepEqual(activeSynergies(['samovar', 'podstakannik', 'borscht']), ['tea']);
+});

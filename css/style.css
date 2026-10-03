@@ -439,6 +439,15 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 .relic-card.rar-rare { box-shadow: 5px 5px 0 var(--blue); }
 .relic-card.rar-legendary { box-shadow: 5px 5px 0 var(--gold); }
 .relic-card:disabled { opacity: .5; cursor: default; }
+.set-chip { font-size: .72rem; border: 1.5px dashed var(--muted); padding: 1px 6px; margin-top: 4px; color: var(--muted); }
+.set-chip.near { border-color: var(--gold); color: var(--ink); }
+.set-chip.done { border: 1.5px solid var(--gold); background: var(--gold); color: #141414; }
+.set-detail { text-align: left; border-top: 2px solid var(--paper-2); margin-top: 10px; padding-top: 8px; }
+.set-detail.done b { color: var(--red); }
+.set-detail p { margin: 2px 0; }
+.set-detail .have { font-weight: 700; }
+.set-detail .missing { color: var(--muted); text-decoration: underline dotted; }
+.syn-pip { color: var(--gold); font-size: 1.1rem; line-height: 28px; padding: 0 2px; }
 .price { font-family: var(--display); font-style: normal; color: var(--red); font-size: 1.1rem; margin-top: 4px; }
 .shop-keeper { font-style: italic; }
 .shop-keeper small { color: var(--muted); font-style: normal; }

@@ -14,6 +14,7 @@ export function xpForLevel(l) {
 
 let notify = () => {};
 export function onNotify(fn) { notify = fn; }
+export function announce(n) { notify(n); }
 
 export function bandsUnlocked(p = save.get()) {
   if (p.settings.allBands) return BANDS.length;

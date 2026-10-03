@@ -60,7 +60,7 @@ from the first unticked item. Keep each milestone playable.
 - [x] Aspect-pair elite (Двойник)
 - [x] More events (20)
 - [x] Boss lines: Tatoeba example sentences (`scripts/build_sentences.py`), also on flashcard backs
-- [ ] Relic synergies
+- [x] Relic synergies (10 sets, shown on relic cards)
 - [x] Run history (stats screen)
 - [x] PWA: offline cache + install to home screen
 

@@ -2,7 +2,7 @@
 import { Rng } from './rng.js';
 import { generateMap } from './map.js';
 import { CHARACTERS } from './content/characters.js';
-import { RELICS, RELIC_IDS } from './content/relics.js';
+import { RELICS, RELIC_IDS, SYNERGIES, activeSynergies } from './content/relics.js';
 import { CONSUMABLES, CONSUMABLE_IDS } from './content/consumables.js';
 import { UPGRADES } from './content/upgrades.js';
 import * as save from './save.js';
@@ -59,6 +59,7 @@ export function newRun({ char, mode, easy, daily = null, seed = null }) {
 export function runStats(run) {
   const rs = { rubMult: 1, restHealMult: 1, shopMult: 1, slots: 2, restBonus: 0 };
   for (const id of run.relics) RELICS[id]?.runApply?.(rs);
+  for (const id of activeSynergies(run.relics)) SYNERGIES[id].runApply?.(rs);
   if (!run.daily) {
     for (const [id, n] of Object.entries(save.get().upgrades)) if (n) UPGRADES[id]?.runStats?.(rs, n);
   }
@@ -69,6 +70,7 @@ export function runStats(run) {
 export function hookProviders(run) {
   const list = [{ id: '_char', hooks: CHARACTERS[run.char].hooks || {} }];
   for (const id of run.relics) if (RELICS[id]) list.push({ id, hooks: RELICS[id] });
+  for (const id of activeSynergies(run.relics)) list.push({ id: `syn:${id}`, hooks: SYNERGIES[id] });
   return list;
 }
 
@@ -112,8 +114,14 @@ export function relicChoices(run, n, weights = { common: 0.65, rare: 0.3, legend
 
 export function gainRelic(run, id) {
   if (!id || run.relics.includes(id) || !RELICS[id]) return null;
+  const before = activeSynergies(run.relics);
   run.relics.push(id);
   RELICS[id].onPickup?.(run);
+  for (const sid of activeSynergies(run.relics)) {
+    if (before.includes(sid)) continue;
+    SYNERGIES[sid].onComplete?.(run);
+    progress.announce({ kind: 'synergy', title: `Набор: ${SYNERGIES[sid].name}`, text: SYNERGIES[sid].desc });
+  }
   progress.check({ type: 'relic', count: run.relics.length });
   return RELICS[id];
 }

@@ -1,7 +1,7 @@
 // Run flow: map, node screens, rewards, leg transitions, end of run.
 import { LEGS, FLOORS_PER_LEG } from './content/route.js';
 import { ENEMIES } from './content/enemies.js';
-import { RELICS, RARITY_PRICE, RARITY_LABEL } from './content/relics.js';
+import { RELICS, RARITY_PRICE, RARITY_LABEL, synergiesFor, SYNERGIES, activeSynergies } from './content/relics.js';
 import { CONSUMABLES, CONSUMABLE_IDS } from './content/consumables.js';
 import { EVENTS } from './content/events.js';
 import { CHARACTERS } from './content/characters.js';
@@ -33,6 +33,7 @@ export function setTitleHandler(fn) { goTitle = fn; }
 
 // ---------------- HUD ----------------
 function hud(run) {
+  cardRun = run;
   const c = CHARACTERS[run.char];
   const rs = run_.runStats(run);
   return `<div class="hud">
@@ -41,7 +42,7 @@ function hud(run) {
       <div class="hud-row"><div class="hp hud-hp ${run.hp / run.maxHp < 0.3 ? 'low' : ''}"><i style="width:${(run.hp / run.maxHp) * 100}%"></i><span>${run.hp} / ${run.maxHp}</span></div>
         <span class="hud-rub">${run.rub} ₽</span></div>
       <div class="hud-row hud-items">
-        <div class="hud-relics">${run.relics.map((id) => `<button class="relic-btn" data-relic="${id}" title="${esc(RELICS[id].name)}">${badge(RELICS[id].icon, RELICS[id].rarity, 28)}</button>`).join('') || '<span class="muted small">no relics yet</span>'}</div>
+        <div class="hud-relics">${activeSynergies(run.relics).map((s) => `<span class="syn-pip" title="${esc(SYNERGIES[s].name + ' — ' + SYNERGIES[s].desc)}">★</span>`).join('')}${run.relics.map((id) => `<button class="relic-btn" data-relic="${id}" title="${esc(RELICS[id].name)}">${badge(RELICS[id].icon, RELICS[id].rarity, 28)}</button>`).join('') || '<span class="muted small">no relics yet</span>'}</div>
         <div class="hud-cons">${Array.from({ length: rs.slots }, (_, i) => {
           const id = run.consumables[i];
           return id ? `<button class="cons-btn" data-i="${i}" title="${esc(CONSUMABLES[id].name)}">${badge(CONSUMABLES[id].icon, 'common', 28)}</button>` : '<span class="cons-empty"></span>';
@@ -56,7 +57,12 @@ function bindHud(run, refresh) {
   $$('.relic-btn').forEach((b) => {
     b.onclick = () => {
       const r = RELICS[b.dataset.relic];
-      modal(`<div class="relic-detail">${badge(r.icon, r.rarity, 72)}<h3>${esc(r.name)}</h3><p class="muted">${esc(r.en)} · ${RARITY_LABEL[r.rarity]}</p><p>${esc(r.desc)}</p></div>`);
+      const sets = synergiesFor(b.dataset.relic).map((s) => {
+        const done = s.relics.every((x) => run.relics.includes(x));
+        return `<div class="set-detail ${done ? 'done' : ''}"><b>${done ? '★ ' : ''}${esc(s.name)}</b> <small>${esc(s.en)}</small><p>${esc(s.desc)}</p>
+          <p class="small">${s.relics.map((x) => `<span class="${run.relics.includes(x) ? 'have' : 'missing'}">${esc(RELICS[x].name)}</span>`).join(' + ')}</p></div>`;
+      }).join('');
+      modal(`<div class="relic-detail">${badge(r.icon, r.rarity, 72)}<h3>${esc(r.name)}</h3><p class="muted">${esc(r.en)} · ${RARITY_LABEL[r.rarity]}</p><p>${esc(r.desc)}</p>${sets}</div>`);
     };
   });
   $$('.cons-btn').forEach((b) => {
@@ -282,9 +288,18 @@ async function rewards(run, type) {
   });
 }
 
+let cardRun = null;
+function setLines(id, run) {
+  return synergiesFor(id).map((s) => {
+    const have = run ? s.relics.filter((r) => r === id || run.relics.includes(r)).length : 0;
+    const done = run && s.relics.every((r) => r === id || run.relics.includes(r));
+    return `<span class="set-chip ${done ? 'done' : have > 1 ? 'near' : ''}" title="${esc(s.desc)}">Набор «${esc(s.name)}» ${have}/${s.relics.length}</span>`;
+  }).join('');
+}
+
 function relicCard(id, price = null, sold = false) {
   const r = RELICS[id];
-  return `<button class="relic-card rar-${r.rarity}" data-id="${id}" ${sold ? 'disabled' : ''}>${badge(r.icon, r.rarity, 64)}<b>${esc(r.name)}</b><small class="muted">${esc(r.en)} · ${RARITY_LABEL[r.rarity]}</small><span>${esc(r.desc)}</span>${price != null ? `<em class="price">${sold ? 'продано' : price + ' ₽'}</em>` : ''}</button>`;
+  return `<button class="relic-card rar-${r.rarity}" data-id="${id}" ${sold ? 'disabled' : ''}>${badge(r.icon, r.rarity, 64)}<b>${esc(r.name)}</b><small class="muted">${esc(r.en)} · ${RARITY_LABEL[r.rarity]}</small><span>${esc(r.desc)}</span>${setLines(id, cardRun)}${price != null ? `<em class="price">${sold ? 'продано' : price + ' ₽'}</em>` : ''}</button>`;
 }
 
 // ---------------- Shop ----------------

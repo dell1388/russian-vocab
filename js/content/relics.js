@@ -200,3 +200,68 @@ export const RELICS = {
 export const RELIC_IDS = Object.keys(RELICS);
 export const RARITY_PRICE = { common: 70, rare: 120, legendary: 190 };
 export const RARITY_LABEL = { common: 'обычная', rare: 'редкая', legendary: 'легендарная' };
+
+// Synergies: holding every relic in a set grants an extra effect. Same hook interface as relics,
+// plus onComplete(run) which runs once when the set is completed.
+export const SYNERGIES = {
+  winter: {
+    name: 'Русская зима', en: 'Russian Winter', relics: ['ushanka', 'valenki', 'baikal_ice'],
+    desc: 'Enemy timers 15% slower; take 10% less damage.',
+    apply(s) { s.timerMult *= 1.15; s.dmgTakenMult *= 0.9; },
+  },
+  tea: {
+    name: 'Чаепитие', en: 'Tea Party', relics: ['samovar', 'podstakannik'],
+    desc: 'Heal 8 more after each won fight.',
+    fightWon(C) { C.heal(8); },
+  },
+  orchestra: {
+    name: 'Народный оркестр', en: 'Folk Orchestra', relics: ['balalaika', 'bayan'],
+    desc: '+15% critical hit chance.',
+    apply(s) { s.critChance += 0.15; },
+  },
+  space: {
+    name: 'Космическая программа', en: 'Space Programme', relics: ['sputnik', 'gagarin'],
+    desc: 'Typed answers deal +30% damage.',
+    beforeHit(C, hit) { if (hit.format === 'type') hit.mult *= 1.3; },
+  },
+  newsroom: {
+    name: 'Редакция', en: 'Newsroom', relics: ['typewriter', 'pravda', 'telegram'],
+    desc: 'Typed answers give +5 ₽ more and deal +25% damage.',
+    beforeHit(C, hit) { if (hit.format === 'type') hit.mult *= 1.25; },
+    afterHit(C, hit) { if (hit.format === 'type') C.gainRub(5); },
+  },
+  kitchen: {
+    name: 'Русская кухня', en: 'Russian Kitchen', relics: ['borscht', 'pelmeni', 'pirozhok'],
+    desc: '+20 max HP. Heal 4 after each won fight.',
+    onComplete(run) { run.maxHp += 20; run.hp += 20; },
+    fightWon(C) { C.heal(4); },
+  },
+  fairytale: {
+    name: 'Сказка', en: 'Fairy Tale', relics: ['matryoshka', 'kokoshnik', 'firebird'],
+    desc: 'Матрёшка blocks the first two hits of every fight.',
+    fightStart(C) { C.fs.fairytale = true; },
+    beforeHurt(C, h) { if (!h.blocked && !C.fs.matryoshka && C.fs.fairytale) { C.fs.fairytale = false; h.blocked = true; C.flash('Сказка!'); } },
+  },
+  plan: {
+    name: 'Пятилетка в четыре года', en: 'Five-Year Plan in Four', relics: ['hammer', 'red_star', 'parovoz'],
+    desc: '+20% damage.',
+    apply(s) { s.dmgMult *= 1.2; },
+  },
+  grandmaster: {
+    name: 'Гроссмейстер', en: 'Grandmaster', relics: ['chess_clock', 'dal'],
+    desc: 'Your first two correct answers each fight are critical hits.',
+    beforeHit(C, hit) { if (C.fightCorrect < 2) hit.crit = true; },
+  },
+  yamshchik: {
+    name: 'Ямщик', en: 'Coachman', relics: ['troika', 'lapti'],
+    desc: 'Streak bonus builds twice as fast.',
+    apply(s) { s.streakRate *= 2; },
+  },
+};
+
+export function synergiesFor(relicId) {
+  return Object.entries(SYNERGIES).filter(([, x]) => x.relics.includes(relicId)).map(([id, x]) => ({ id, ...x }));
+}
+export function activeSynergies(relics) {
+  return Object.keys(SYNERGIES).filter((id) => SYNERGIES[id].relics.every((r) => relics.includes(r)));
+}
