@@ -69,6 +69,12 @@ export const ENEMIES = {
     lines: [['Ууууу...', 'Whooo...']],
   },
 
+  kot: {
+    name: 'Кот учёный', en: 'The Learned Cat', tier: 'normal', hp: 40, dmg: 6, format: 'gender', traits: [],
+    art: { kind: 'beast', coat: '#3a3a3a', hat: 'ears', acc: 'glasses', skin: '#4a4a4a', snout: 'cat' },
+    lines: [['Идёт направо — песнь заводит…', 'Walking right, he starts a song…'], ['Он, она или оно?', 'He, she or it?']],
+  },
+
   // Elites: typing
   byurokrat: {
     name: 'Бюрократ', en: 'Bureaucrat', tier: 'elite', hp: 70, dmg: 9, format: 'type', traits: ['armored', 'fine'],

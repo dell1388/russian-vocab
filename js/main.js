@@ -308,6 +308,11 @@ function stats() {
     <h3>Progress by band</h3>
     <div class="bands">${byBand.map((b, i) => `<div class="band ${i < progress.bandsUnlocked() ? '' : 'locked'}"><span>${esc(b.name)}${i < progress.bandsUnlocked() ? '' : ` 🔒 level ${progress.BAND_LEVELS[i]}`}</span>
       <div class="stack"><i class="m" style="width:${(b.m / b.total) * 100}%"></i><i class="s" style="width:${((b.sn - b.m) / b.total) * 100}%"></i></div><small>${b.m} mastered · ${b.sn} seen · ${b.total}</small></div>`).join('')}</div>
+    <h3>Recent journeys</h3>
+    ${(p.history || []).length ? `<table class="wordtable history"><tr><th>When</th><th>Who</th><th>Reached</th><th>Acc.</th><th>★</th></tr>${p.history.map((h) => `<tr>
+      <td>${new Date(h.date).toLocaleDateString()}</td><td>${esc(CHARACTERS[h.char]?.name || h.char)}${h.daily ? ' · daily' : ''}</td>
+      <td>${h.win ? '🏁 Владивосток' : esc(LEGS[Math.min(h.leg, LEGS.length - 1)].to)}</td>
+      <td>${h.correct + h.wrong ? Math.round((100 * h.correct) / (h.correct + h.wrong)) : 0}%</td><td>${h.stars}</td></tr>`).join('')}</table>` : '<p class="muted">No finished journeys yet.</p>'}
     <button class="btn btn-ghost btn-back">← Назад</button></div>`, 'screen-stats');
   $('.btn-back').onclick = title;
 }

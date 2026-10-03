@@ -81,7 +81,7 @@ while (steps++ < MAX_STEPS) {
     await shot(`combat-${st.format}${st.tier !== 'normal' ? '-' + st.tier : ''}`);
     const right = Math.random() < ACC;
     await page.waitForTimeout(200 + Math.random() * 600);
-    if (st.format === 'mc') {
+    if (st.format === 'mc' || st.format === 'gender') {
       const opts = await page.$$('.opt');
       const i = right ? st.correct : (st.correct + 1) % opts.length;
       await opts[i].click().catch(() => {});

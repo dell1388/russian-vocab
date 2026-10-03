@@ -52,12 +52,14 @@ from the first unticked item. Keep each milestone playable.
 ## M5 — Next (after playtesting)
 - [ ] Playtest on a real phone; fix layout/keyboard issues
 - [ ] Re-balance from real play (sim assumes 80% accuracy reaches leg 3 ~20%, 90% wins ~30%)
-- [ ] Theme toggle (light/dark) in settings
+- [x] Theme toggle (light/dark) in settings
 - [ ] Boss-specific mechanics beyond phases (Кощей needle, Горыныч per-head HP bars)
-- [ ] Gender challenge enemy (м/ж/с) and aspect-pair mini-boss
-- [ ] More events (target 20) and relic synergies
-- [ ] Run history / leaderboard of daily scores (local)
-- [ ] PWA: offline cache + install to home screen
+- [x] Gender challenge enemy (Кот учёный)
+- [ ] Aspect-pair mini-boss (imperfective↔perfective)
+- [x] More events (20)
+- [ ] Relic synergies
+- [x] Run history (stats screen)
+- [x] PWA: offline cache + install to home screen
 
 ## Ideas backlog
 - Example sentences (Tatoeba) as "boss quotes"

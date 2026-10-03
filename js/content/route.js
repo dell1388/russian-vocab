@@ -11,14 +11,14 @@ export const LEGS = [
   {
     from: 'Казань', fromEn: 'Kazan', to: 'Екатеринбург', toEn: 'Yekaterinburg', boss: 'mednaya',
     stations: ['Агрыз', 'Ижевск', 'Пермь', 'Кунгур', 'Шаля', 'Балезино', 'Глазов', 'Верещагино', 'Первоуральск'],
-    enemies: ['volk', 'leshiy', 'gopnik', 'kontroler'],
+    enemies: ['volk', 'leshiy', 'gopnik', 'kontroler', 'kot'],
     elites: ['byurokrat', 'kikimora'],
     color: '#b5651d',
   },
   {
     from: 'Екатеринбург', fromEn: 'Yekaterinburg', to: 'Новосибирск', toEn: 'Novosibirsk', boss: 'koshchey',
     stations: ['Тюмень', 'Ишим', 'Омск', 'Татарск', 'Барабинск', 'Каргат', 'Чулымская', 'Камышлов', 'Называевск'],
-    enemies: ['medved', 'volk', 'komar', 'snegovik'],
+    enemies: ['medved', 'volk', 'komar', 'snegovik', 'kot'],
     elites: ['provodnitsa', 'kikimora'],
     color: '#2f4f4f',
   },
@@ -32,7 +32,7 @@ export const LEGS = [
   {
     from: 'Иркутск', fromEn: 'Irkutsk', to: 'Владивосток', toEn: 'Vladivostok', boss: 'moroz',
     stations: ['Слюдянка', 'Улан-Удэ', 'Чита', 'Могоча', 'Сковородино', 'Белогорск', 'Биробиджан', 'Хабаровск', 'Уссурийск'],
-    enemies: ['tigr_cub', 'metel', 'kontroler', 'medved'],
+    enemies: ['tigr_cub', 'metel', 'kontroler', 'medved', 'kot'],
     elites: ['tigr', 'provodnitsa'],
     color: '#4b2e83',
   },

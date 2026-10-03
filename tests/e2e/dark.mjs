@@ -1,0 +1,26 @@
+import { createRequire } from 'node:module';
+import { execSync } from 'node:child_process';
+const require = createRequire(import.meta.url);
+const { chromium } = require(execSync('npm root -g').toString().trim() + '/playwright');
+const out = process.argv[2];
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 360, height: 740 }, colorScheme: 'dark' });
+const errors = [];
+page.on('pageerror', (e) => errors.push(e.message));
+await page.goto('http://localhost:8765/');
+await page.evaluate(() => { localStorage.clear(); });
+await page.reload();
+await page.waitForSelector('.screen-title');
+await page.screenshot({ path: `${out}/dark-title.png` });
+await page.click('[data-a="new"]'); await page.click('.modal .btn');
+await page.click('.char-card[data-id="kosmonavt"]'); await page.click('.mode[data-m="en2ru"]'); await page.click('.btn-go');
+await page.waitForSelector('.screen-map'); await page.screenshot({ path: `${out}/dark-map.png` });
+await page.click('.node.avail'); await page.waitForSelector('.screen-combat'); await page.waitForTimeout(900);
+await page.screenshot({ path: `${out}/dark-combat.png` });
+// force a typing question via elite-like state
+await page.evaluate(() => { const C = window.__combat; C.enemy.def = { ...C.enemy.def, format: 'type' }; });
+const st = await page.evaluate(() => window.__combat.q.options.findIndex((o) => o.correct));
+await page.click(`.opt[data-i="${st}"]`); await page.waitForTimeout(1200);
+await page.screenshot({ path: `${out}/dark-type.png` });
+console.log('errors', errors);
+await browser.close();

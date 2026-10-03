@@ -30,7 +30,8 @@ export function initWords(list) {
   for (const w of list) {
     w.band = w.ess ? 0 : BANDS.findIndex((b) => w.id <= b.max);
     // Everyday essentials are rare in written text; interleave them early in the learning order
-    w.intro = w.ess ? 4 + 1.4 * e++ : w.id;
+    // Function words (prepositions, particles, conjunctions) are frequent but dull first words: push them later
+    w.intro = w.ess ? 4 + 1.4 * e++ : ['prep', 'part', 'conj'].includes(w.pos) ? w.id * 2.5 + 15 : w.id;
     byId.set(w.id, w);
   }
   return WORDS;

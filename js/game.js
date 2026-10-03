@@ -127,7 +127,7 @@ export function showMap(run) {
     const info = NODE_INFO[n.type];
     const isAvail = f === 'boss' ? avail.includes('boss') : run.pos.floor === f - 1 || (run.pos.floor === -1 && f === 0) ? avail.includes(i) : false;
     const cls = ['node', `node-${n.type}`, n.done ? 'done' : '', isAvail ? 'avail' : '', run.pos.floor === f && run.pos.idx === i ? 'here' : ''].join(' ');
-    const art = n.type === 'boss' ? portrait(ENEMIES[L.boss].art, { bg: 'circle', bgColor: '#141414' }) : icon(info.icon, n.done ? '#f3e9d2' : '#141414', 30);
+    const art = n.type === 'boss' ? portrait(ENEMIES[L.boss].art, { bg: 'circle', bgColor: '#141414' }) : icon(info.icon, 'currentColor', 30);
     return `<button class="${cls}" style="left:${x}%;top:${y}px" data-f="${f}" data-i="${i}" ${isAvail ? '' : 'disabled'} aria-label="${info.en} — ${esc(n.station)}">
       <span class="node-ic">${art}</span><span class="node-name">${esc(n.station)}</span><span class="node-type">${info.ru}</span></button>`;
   };
@@ -141,7 +141,7 @@ export function showMap(run) {
       <div class="route-line"><b style="width:${(run.leg / LEGS.length) * 100 + ((run.pos.floor + 1) / (FLOORS_PER_LEG + 1)) * (100 / LEGS.length)}%"></b></div></div>
     <div class="leg-title" style="--leg:${L.color}"><span class="leg-num">Этап ${ROMAN[run.leg]}</span><h2>${esc(L.from)} → ${esc(L.to)}</h2><small>${esc(L.fromEn)} → ${esc(L.toEn)} · boss: ${esc(ENEMIES[L.boss].name)}</small></div>
     <div class="map" style="height:${total}px"><svg class="map-lines" viewBox="0 0 100 ${total}" preserveAspectRatio="none">${lines}</svg>${rows.join('')}</div>
-    <div class="legend">${Object.entries(NODE_INFO).map(([k, v]) => `<span>${icon(v.icon, '#141414', 16)} ${v.ru} <small>${v.en}</small></span>`).join('')}</div>
+    <div class="legend">${Object.entries(NODE_INFO).map(([k, v]) => `<span>${icon(v.icon, 'currentColor', 16)} ${v.ru} <small>${v.en}</small></span>`).join('')}</div>
     <p class="muted small center">Mode: ${modeLabel(run.mode)}${run.easy ? ' · Easy (no timer)' : ''}${run.daily ? ' · Daily challenge ' + esc(run.daily.date) : ''}</p>`, 'screen-map');
   bindHud(run, () => showMap(run));
   $$('.node.avail').forEach((b) => {
@@ -501,6 +501,8 @@ export async function endRun(run, win, reason = 'dead', killer = null) {
     p.daily.best[run.daily.date] = Math.max(prev, score);
     dailyLine = `<p class="daily-score">Daily score: <b>${score}</b>${score > prev ? ' — new best!' : ` (best ${prev})`}</p>`;
   }
+  p.history = [{ date: Date.now(), char: run.char, mode: run.mode, easy: run.easy, daily: !!run.daily, win, leg: run.leg, floors: run.stats.floors,
+    correct: run.stats.correct, wrong: run.stats.wrong, stars, killer }, ...(p.history || [])].slice(0, 20);
   p.run = null;
   progress.check({ type: 'runEnd', win, mode: run.mode, easy: run.easy });
   progress.checkUnlocks({ type: 'runEnd', win });

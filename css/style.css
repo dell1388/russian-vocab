@@ -261,6 +261,8 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 }
 .opt[lang="ru"] { font-size: 1.3rem; font-weight: 700; }
 .opt kbd { flex: none; }
+.opt small { font-size: .75rem; color: var(--muted); font-weight: 400; margin-left: auto; }
+.opts-3 { grid-template-columns: 1fr; }
 .opt:hover:not(:disabled) { background: var(--paper-2); transform: translate(-1px, -1px); }
 .opt.right { background: var(--green); color: #fff; border-color: var(--green); }
 .opt.wrong { background: var(--red); color: #fff; border-color: var(--red); }
@@ -390,7 +392,10 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 .node-elite .node-ic svg { transform: rotate(-45deg); }
 .node-name { font-size: .72rem; font-weight: 700; margin-top: 3px; text-align: center; line-height: 1.05; background: var(--paper); padding: 0 3px; }
 .node-type { font-size: .6rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; background: var(--paper); }
-.node.done .node-ic { background: var(--ink); }
+.node-ic { color: var(--ink); }
+.node.done .node-ic { background: var(--ink); color: var(--paper); }
+.node.avail .node-ic, .node-city .node-ic { color: #141414; }
+.node-city .node-ic { color: #f3e9d2; }
 .node.done { opacity: .75; }
 .node.here .node-ic { box-shadow: 0 0 0 4px var(--gold); }
 .node.avail { cursor: pointer; }

@@ -47,6 +47,22 @@ export function makeQuestion(w, format, dir, rng, { options = 4, pool } = {}) {
   return q;
 }
 
+export const GENDER_OPTS = [
+  { g: 'm', label: 'мужской', en: 'masculine' },
+  { g: 'f', label: 'женский', en: 'feminine' },
+  { g: 'n', label: 'средний', en: 'neuter' },
+];
+
+/** Grammatical gender question for a noun. */
+export function makeGender(w) {
+  return {
+    word: w, format: 'gender', dir: 'ru2en',
+    prompt: { main: ruLabel(w), sub: w.gloss, lang: 'ru', speak: w.bare },
+    answerLabel: GENDER_OPTS.find((o) => o.g === w.g).label,
+    options: GENDER_OPTS.map((o) => ({ label: o.label, sub: o.en, lang: 'ru', correct: o.g === w.g, word: w })),
+  };
+}
+
 /** Match-pairs board: n words; left column Russian, right column English, both shuffled. */
 export function makeMatch(words, rng) {
   return {
