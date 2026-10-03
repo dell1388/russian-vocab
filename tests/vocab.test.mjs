@@ -87,3 +87,17 @@ test('every word has gloss, pos, ru', () => {
     assert.ok(w.ru && w.pos && w.bare);
   }
 });
+
+test('question direction always honours single-language modes', async () => {
+  const { resolveDir } = await import('../js/questions.js');
+  const rng = new Rng(3);
+  for (let i = 0; i < 50; i++) {
+    assert.equal(resolveDir('en2ru', rng), 'en2ru');
+    assert.equal(resolveDir('ru2en', rng), 'ru2en');
+    assert.equal(resolveDir('en2ru', rng, 'ru2en'), 'en2ru');
+    assert.equal(resolveDir('ru2en', rng, 'en2ru'), 'ru2en');
+  }
+  assert.equal(resolveDir('mix', rng, 'ru2en'), 'ru2en');
+  const seen = new Set(Array.from({ length: 40 }, () => resolveDir('mix', rng)));
+  assert.equal(seen.size, 2);
+});

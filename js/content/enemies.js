@@ -138,7 +138,7 @@ export const ENEMIES = {
 export const TRAIT_INFO = {
   fine: ['Штраф', 'Misses cost you ₽'],
   double: ['Двойной удар', 'Attacks twice'],
-  flip: ['Путаница', 'Question direction flips each turn'],
+  flip: ['Путаница', 'Question direction flips each turn (Mixed mode)'],
   fast: ['Быстрый', 'Shorter timer'],
   slow: ['Медленный', 'Longer timer, hits hard'],
   armored: ['Броня', 'First 2 hits each phase deal half damage'],

@@ -49,6 +49,9 @@ export class Combat {
     this.enrage = 1;
     this.recent = [];
     this.flipDir = run.mode === 'ru2en' ? 'ru2en' : 'en2ru';
+    // "Flip" alternates question direction, which only makes sense in Mixed mode.
+    // In a single-language mode those enemies get a shorter timer instead.
+    if (run.mode !== 'mix' && this.enemy.traits.delete('flip')) this.enemy.traits.add('fast');
     this.state = 'idle';
     this.pool = progress.currentPool();
     this.queued = null;
@@ -138,7 +141,7 @@ export class Combat {
   }
 
   nextDir() {
-    if (this.enemy.traits.has('flip')) {
+    if (this.run.mode === 'mix' && this.enemy.traits.has('flip')) {
       this.flipDir = this.flipDir === 'en2ru' ? 'ru2en' : 'en2ru';
       return this.flipDir;
     }

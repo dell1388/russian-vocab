@@ -7,9 +7,13 @@ export function ruLabel(w) {
   return save.get().settings.stress ? w.ru : stripStress(w.ru);
 }
 
-export function resolveDir(mode, rng) {
-  if (mode === 'mix') return rng.chance(0.5) ? 'en2ru' : 'ru2en';
-  return mode;
+/**
+ * Question direction. A single-language mode (en2ru / ru2en) is always honoured,
+ * so answers are only ever in the language the player chose; `preferred` only applies in Mixed.
+ */
+export function resolveDir(mode, rng, preferred = null) {
+  if (mode !== 'mix') return mode;
+  return preferred || (rng.chance(0.5) ? 'en2ru' : 'ru2en');
 }
 
 /** Multiple choice or typing question for word w. */

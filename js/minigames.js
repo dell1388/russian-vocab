@@ -88,7 +88,7 @@ export function quiz({ count = 1, format = 'mc', dir = null, timed = false, rng,
       let w = pickWord(pool, save.get().srs, { rng, recent, requireSeen: fmt === 'type' });
       if (!w) { fmt = 'mc'; w = pickWord(pool, save.get().srs, { rng, recent }); }
       recent.add(w.id);
-      const d = dir || resolveDir(mode, rng);
+      const d = resolveDir(mode, rng, dir);
       const q = makeQuestion(w, fmt, d, rng, { pool });
       $('.q-prompt', root).innerHTML = `<span class="q-main" lang="${q.prompt.lang}">${esc(q.prompt.main)}</span>`;
       $('.q-sub', root).innerHTML = q.prompt.sub ? `<span class="hint">${esc(q.prompt.sub)}</span>` : '';
