@@ -123,6 +123,11 @@ def main():
     if os.path.exists(op):
         overrides = json.load(open(op, encoding='utf-8'))
     skip = {key(x) for x in overrides.get('skip', [])}
+    drop = {x.lower() for x in overrides.get('glossDrop', [])}
+
+    def default_gloss(senses):
+        items = [senses[0][0]] + [x for x in senses[0][1:2] if x.lower() not in drop]
+        return ', '.join(items)
 
     used = set()
     words = []
@@ -160,7 +165,7 @@ def main():
             w['asp'] = 'pf' if row['aspect'].startswith('perf') else 'impf'
             if row.get('partner'):
                 w['partner'] = row['partner'].split(';')[0]
-        w['gloss'] = ', '.join(senses[0][:2])
+        w['gloss'] = default_gloss(senses)
         o = overrides.get('fix', {}).get(row['bare'])
         if o:
             w.update(o)
@@ -188,7 +193,7 @@ def main():
         pos = {'nouns': 'noun', 'verbs': 'verb', 'adjectives': 'adj', 'others': 'adv'}[row['_file']]
         senses = split_senses(row['translations_en'])
         w = {'id': 0, 'ru': accent(row['accented'] or row['bare']), 'bare': row['bare'], 'pos': pos,
-             'en': senses, 'ipm': rnc_ipm.get(key(lemma), 20.0), 'gloss': ', '.join(senses[0][:2]), 'ess': 1}
+             'en': senses, 'ipm': rnc_ipm.get(key(lemma), 20.0), 'gloss': default_gloss(senses), 'ess': 1}
         if row['_file'] == 'nouns' and row.get('gender'):
             w['g'] = row['gender']
         if row['_file'] == 'verbs' and row.get('aspect'):

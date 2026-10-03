@@ -248,6 +248,9 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 .q-main[lang="ru"] { font-family: var(--body); font-weight: 700; font-size: clamp(1.8rem, 7.5vw, 2.6rem); }
 .q-sub { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .85rem; color: var(--muted); margin: 2px 0 12px; }
 .q-sub .hint { color: var(--red); font-weight: 700; }
+.new-tag { background: var(--gold); color: #141414; font-family: var(--display); font-size: .7rem; text-transform: uppercase; padding: 1px 6px; }
+.enemy-art .portrait { animation: breathe 3s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes breathe { 50% { transform: scale(1.025, 1.015); } }
 .q-preview { font-size: .8rem; color: var(--muted); margin-top: 8px; min-height: 1em; }
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 420px) { .opts { grid-template-columns: 1fr; } }

@@ -1014,6 +1014,240 @@
   },
   "готовить": {
    "gloss": "cook, prepare"
+  },
+  "мясо": {
+   "gloss": "meat"
+  },
+  "кошка": {
+   "gloss": "cat"
+  },
+  "женщина": {
+   "gloss": "woman"
+  },
+  "государство": {
+   "gloss": "state, nation"
+  },
+  "область": {
+   "gloss": "region, province"
+  },
+  "суд": {
+   "gloss": "court"
+  },
+  "завтрак": {
+   "gloss": "breakfast"
+  },
+  "банк": {
+   "gloss": "bank"
+  },
+  "губа": {
+   "gloss": "lip"
+  },
+  "грудь": {
+   "gloss": "chest, breast"
+  },
+  "номер": {
+   "gloss": "number, hotel room"
+  },
+  "голос": {
+   "gloss": "voice, vote"
+  },
+  "час": {
+   "gloss": "hour"
+  },
+  "жена": {
+   "gloss": "wife"
+  },
+  "муж": {
+   "gloss": "husband"
+  },
+  "рубль": {
+   "gloss": "rouble"
+  },
+  "никакой": {
+   "gloss": "no, none (at all)"
+  },
+  "всякий": {
+   "gloss": "any, every kind of"
+  },
+  "какой-то": {
+   "gloss": "some, some kind of"
+  },
+  "жёлтый": {
+   "gloss": "yellow"
+  },
+  "книга": {
+   "gloss": "book"
+  },
+  "театр": {
+   "gloss": "theatre"
+  },
+  "окно": {
+   "gloss": "window"
+  },
+  "школа": {
+   "gloss": "school"
+  },
+  "война": {
+   "gloss": "war"
+  },
+  "ничто": {
+   "gloss": "nothing"
+  },
+  "автор": {
+   "gloss": "author"
+  },
+  "девушка": {
+   "gloss": "girl, young woman"
+  },
+  "девочка": {
+   "gloss": "girl (little)"
+  },
+  "мальчик": {
+   "gloss": "boy"
+  },
+  "кухня": {
+   "gloss": "kitchen, cuisine"
+  },
+  "работник": {
+   "gloss": "worker, employee"
+  },
+  "шапка": {
+   "gloss": "hat, cap"
+  },
+  "рубашка": {
+   "gloss": "shirt"
+  },
+  "обувь": {
+   "gloss": "footwear, shoes"
+  },
+  "бабушка": {
+   "gloss": "grandmother"
+  },
+  "дедушка": {
+   "gloss": "grandfather"
+  },
+  "платье": {
+   "gloss": "dress"
+  },
+  "автобус": {
+   "gloss": "bus"
+  },
+  "вино": {
+   "gloss": "wine"
+  },
+  "остров": {
+   "gloss": "island"
+  },
+  "стул": {
+   "gloss": "chair"
+  },
+  "сок": {
+   "gloss": "juice"
+  },
+  "поздний": {
+   "gloss": "late"
+  },
+  "странный": {
+   "gloss": "strange, odd"
+  },
+  "воздух": {
+   "gloss": "air"
+  },
+  "небо": {
+   "gloss": "sky"
+  },
+  "автомобиль": {
+   "gloss": "car, automobile"
+  },
+  "самолёт": {
+   "gloss": "plane, aircraft"
+  },
+  "зал": {
+   "gloss": "hall"
+  },
+  "интересный": {
+   "gloss": "interesting"
+  },
+  "утро": {
+   "gloss": "morning"
+  },
+  "военный": {
+   "gloss": "military; soldier"
+  },
+  "партия": {
+   "gloss": "party, batch"
+  },
+  "господин": {
+   "gloss": "mister, gentleman"
+  },
+  "министр": {
+   "gloss": "minister"
+  },
+  "председатель": {
+   "gloss": "chairman"
+  },
+  "представление": {
+   "gloss": "performance, idea"
+  },
+  "учитель": {
+   "gloss": "teacher"
+  },
+  "ученик": {
+   "gloss": "pupil, student"
+  },
+  "гостиница": {
+   "gloss": "hotel"
+  },
+  "билет": {
+   "gloss": "ticket"
+  },
+  "государственный": {
+   "gloss": "state, public"
+  },
+  "знание": {
+   "gloss": "knowledge"
+  },
+  "объект": {
+   "gloss": "object, site"
+  },
+  "кабинет": {
+   "gloss": "office, study"
+  },
+  "масса": {
+   "gloss": "mass, a lot"
+  },
+  "период": {
+   "gloss": "period"
+  },
+  "солдат": {
+   "gloss": "soldier"
+  },
+  "губернатор": {
+   "gloss": "governor"
+  },
+  "товарищ": {
+   "gloss": "comrade, friend"
+  },
+  "святой": {
+   "gloss": "holy; saint"
+  },
+  "капитан": {
+   "gloss": "captain"
+  },
+  "плечо": {
+   "gloss": "shoulder"
+  },
+  "палец": {
+   "gloss": "finger, toe"
+  },
+  "лес": {
+   "gloss": "forest, wood"
+  },
+  "ребёнок": {
+   "gloss": "child"
+  },
+  "история": {
+   "gloss": "history, story"
   }
  },
  "extra": [
@@ -1134,5 +1368,79 @@
    "gloss": "your (plural/formal)",
    "ipm": 547.5
   }
+ ],
+ "glossDrop": [
+  "a",
+  "appellation",
+  "arm",
+  "audience",
+  "authoress",
+  "banner",
+  "boards",
+  "brim",
+  "casement-window",
+  "chamber",
+  "chant",
+  "chemise",
+  "clump",
+  "coach",
+  "cook-house",
+  "decease",
+  "detachment",
+  "edifice",
+  "emergence",
+  "enunciation",
+  "erudition",
+  "establishment",
+  "farm-hand",
+  "faro",
+  "flesh",
+  "foot-gear",
+  "fortune",
+  "gown",
+  "grandmamma",
+  "grapnel",
+  "handing-in",
+  "headline",
+  "heaven",
+  "inlet",
+  "isle",
+  "lass",
+  "liquor",
+  "lumber",
+  "model",
+  "monsieur",
+  "morn",
+  "nought",
+  "or",
+  "overt",
+  "paste",
+  "play-house",
+  "prepossessing",
+  "psyche",
+  "queer",
+  "realizable",
+  "regular",
+  "sap",
+  "schoolhouse",
+  "secretary",
+  "shed",
+  "soldier",
+  "spell",
+  "stool",
+  "suite",
+  "tardy",
+  "timber",
+  "upper",
+  "veil",
+  "volume",
+  "warfare",
+  "whereabouts",
+  "women",
+  "banner headline",
+  "audience chamber",
+  "upper arm",
+  "motor car",
+  "little girl"
  ]
 }

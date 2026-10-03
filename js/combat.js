@@ -182,6 +182,9 @@ export class Combat {
     if (format === 'type') mult *= this.stats.typeTimerMult;
     if (e.traits.has('fast')) mult *= 0.75;
     if (e.traits.has('slow')) mult *= 1.25;
+    // Brand-new words get a "new" tag and extra time
+    this.q.isNew = !save.get().srs[w.id];
+    if (this.q.isNew) mult *= 1.4;
     this.q.timeMs = base * mult;
     this.renderQuestion();
     this.beginTimer();
@@ -607,7 +610,7 @@ export class Combat {
     $('.q-feedback').innerHTML = '';
     $('.q-prompt').innerHTML = `<span class="q-main" lang="${q.prompt.lang}">${esc(q.prompt.main)}</span>`;
     const fmt = q.format === 'type' ? (q.answerLang === 'ru' ? 'Напишите по-русски' : 'Type in English') : q.dir === 'en2ru' ? 'Выберите русское слово' : 'Choose the meaning';
-    $('.q-sub').innerHTML = `${q.prompt.sub ? `<span class="hint">${esc(q.prompt.sub)}</span>` : ''}<span class="fmt">${fmt}</span>`;
+    $('.q-sub').innerHTML = `${q.isNew ? '<span class="new-tag">новое слово</span>' : ''}${q.prompt.sub ? `<span class="hint">${esc(q.prompt.sub)}</span>` : ''}<span class="fmt">${fmt}</span>`;
     $('.speak').style.visibility = q.dir === 'ru2en' ? 'visible' : 'hidden';
     const pv = $('.q-preview');
     pv.innerHTML = this.queued ? `Следующее: <span lang="ru">${esc(ruLabel(this.queued))}</span>` : '';
