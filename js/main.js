@@ -1,5 +1,5 @@
 // Entry point: title screen and out-of-run menus.
-import { loadWords, WORDS, BANDS, POS_GROUPS, hintLine, posGroup } from './data.js';
+import { loadWords, loadSentences, WORDS, BANDS, POS_GROUPS, hintLine, posGroup } from './data.js';
 import * as save from './save.js';
 import * as progress from './progress.js';
 import * as audio from './audio.js';
@@ -385,6 +385,7 @@ function about() {
     <ul>
       <li>Frequency: О. Н. Ляшевская, С. А. Шаров, <i>Частотный словарь современного русского языка</i> (на материалах Национального корпуса русского языка), 2009. Lemmatised, so every word is in its dictionary form.</li>
       <li>Stress, translations, grammar: <a href="https://en.openrussian.org" target="_blank" rel="noopener">OpenRussian.org</a>, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Word list in this game is shared under the same licence.</li>
+      <li>Example sentences: <a href="https://tatoeba.org" target="_blank" rel="noopener">Tatoeba</a>, licensed CC BY 2.0 FR.</li>
       <li>Music: «Коробейники», Russian folk song (public domain), synthesised live.</li>
     </ul>
     <h3>Tips</h3>
@@ -405,6 +406,7 @@ async function boot() {
     show(`<div class="panel"><h2>Ошибка</h2><p>Could not load the word list. If you opened index.html directly from disk, serve the folder over HTTP instead (e.g. <code>python3 -m http.server</code>).</p></div>`);
     return;
   }
+  loadSentences().catch(() => { /* examples are optional */ });
   document.addEventListener('pointerdown', () => audio.unlockAudio(), { once: true });
   applyTheme();
   if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(() => {});

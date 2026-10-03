@@ -228,7 +228,12 @@ kbd { font-family: var(--display); font-size: .7em; border: 1.5px solid currentC
 .chip-tier { background: var(--red); color: var(--on-red); }
 .chip-phase { background: var(--gold); color: #141414; }
 .enemy-line { font-style: italic; font-size: .9rem; margin-top: 6px; }
-.enemy-line small { color: var(--muted); font-style: normal; }
+.enemy-line small { color: var(--muted); font-style: normal; display: block; }
+.enemy-line b { color: var(--red); }
+.tier-boss .enemy-line { background: var(--card); border: 2px solid var(--ink); padding: 6px 10px; position: relative; font-size: .95rem; }
+.tier-boss .enemy-line::after { content: ''; position: absolute; right: -10px; top: 12px; border: 8px solid transparent; border-left-color: var(--ink); }
+.enemy-line.says { animation: say .35s ease-out; }
+@keyframes say { from { transform: scale(.92); opacity: .3; } }
 .enemy-art { width: 120px; flex: none; transition: transform .15s, opacity .5s; }
 .enemy-art .portrait, .player-art .portrait { width: 100%; height: auto; display: block; }
 .tier-boss .enemy-art { width: 150px; }
@@ -480,7 +485,7 @@ blockquote small { display: block; font-size: .8rem; color: var(--muted); font-s
 /* ---------- flashcards / quiz ---------- */
 .flash-screen, .quiz-screen { text-align: center; }
 .flash-count, .quiz-count { font-family: var(--display); color: var(--muted); }
-.flashcard { perspective: 900px; margin: 14px auto; max-width: 440px; height: 220px; cursor: pointer; outline: none; }
+.flashcard { perspective: 900px; margin: 14px auto; max-width: 440px; height: 260px; cursor: pointer; outline: none; }
 .fc-inner { position: relative; width: 100%; height: 100%; transition: transform .45s; transform-style: preserve-3d; }
 .flashcard.flipped .fc-inner { transform: rotateY(180deg); }
 .fc-front, .fc-back {
@@ -491,6 +496,8 @@ blockquote small { display: block; font-size: .8rem; color: var(--muted); font-s
 .fc-ru { font-size: 2.2rem; font-weight: 700; }
 .fc-en { font-family: var(--display); font-size: 1.5rem; }
 .fc-hint { font-size: .85rem; color: var(--muted); }
+.fc-ex { font-size: .9rem; font-style: italic; margin-top: 4px; }
+.fc-ex small { display: block; color: var(--muted); font-style: normal; }
 .flash-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .flash-btns .btn { min-width: 140px; }
 .btn-bad { background: var(--red); color: #fff; box-shadow: 4px 4px 0 var(--shadow); }

@@ -1,6 +1,6 @@
 // Non-combat vocab UIs: flashcards (self-graded) and short quizzes for events.
 import { makeQuestion, ruLabel, resolveDir } from './questions.js';
-import { hintLine } from './data.js';
+import { hintLine, exampleFor } from './data.js';
 import { pickWord } from './srs.js';
 import * as progress from './progress.js';
 import * as save from './save.js';
@@ -35,7 +35,9 @@ export function flashcards(words, { title = 'Повторение', subtitle = '
       const ru = `<div class="fc-ru" lang="ru">${esc(ruLabel(w))}</div>`;
       const en = `<div class="fc-en">${esc(w.gloss)}</div><div class="fc-hint">${esc(hintLine(w))}</div>`;
       $('.fc-front', card).innerHTML = d === 'ru2en' ? ru : en;
-      $('.fc-back', card).innerHTML = d === 'ru2en' ? en + ru : ru + en;
+      const ex = exampleFor(w);
+      const exHtml = ex ? `<div class="fc-ex"><span lang="ru">${esc(ex.ru)}</span><small>${esc(ex.en)}</small></div>` : '';
+      $('.fc-back', card).innerHTML = (d === 'ru2en' ? en + ru : ru + en) + exHtml;
       card.classList.remove('flipped');
       $('.flash-count', root).textContent = `${i + 1} / ${words.length}`;
       $('.btn-flip', root).hidden = false;

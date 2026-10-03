@@ -42,6 +42,20 @@ export function initWords(list) {
   return WORDS;
 }
 
+// Example sentences from Tatoeba: word id -> [[ru, en, matched form], ...]
+export const SENTENCES = new Map();
+export async function loadSentences(url = 'data/sentences.json') {
+  const res = await fetch(url);
+  const data = await res.json();
+  for (const [id, list] of Object.entries(data)) SENTENCES.set(+id, list);
+}
+export function exampleFor(w, rng) {
+  const list = SENTENCES.get(w.id);
+  if (!list || !list.length) return null;
+  const [ru, en, form] = rng ? rng.pick(list) : list[0];
+  return { ru, en, form };
+}
+
 export async function loadWords(url = 'data/words.json') {
   const res = await fetch(url);
   return initWords(await res.json());

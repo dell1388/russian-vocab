@@ -1,6 +1,6 @@
 // Offline cache: stale-while-revalidate for same-origin assets.
 const CACHE = 'transsib-v1';
-const CORE = ['./', 'index.html', 'css/style.css', 'data/words.json', 'manifest.webmanifest', 'icons/icon.svg',
+const CORE = ['./', 'index.html', 'css/style.css', 'data/words.json', 'data/sentences.json', 'manifest.webmanifest', 'icons/icon.svg',
   'js/main.js', 'js/game.js', 'js/combat.js', 'js/run.js', 'js/map.js', 'js/data.js', 'js/text.js', 'js/srs.js', 'js/rng.js',
   'js/save.js', 'js/progress.js', 'js/questions.js', 'js/minigames.js', 'js/audio.js', 'js/art.js', 'js/ui.js', 'js/kbd.js',
   'js/content/route.js', 'js/content/enemies.js', 'js/content/characters.js', 'js/content/relics.js', 'js/content/consumables.js',

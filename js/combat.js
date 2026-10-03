@@ -5,7 +5,7 @@ import { RELICS } from './content/relics.js';
 import { CONSUMABLES } from './content/consumables.js';
 import { makeQuestion, makeMatch, makeGender, makeAspect, resolveDir, ruLabel } from './questions.js';
 import { pickWord } from './srs.js';
-import { glossKeys } from './data.js';
+import { glossKeys, exampleFor } from './data.js';
 import * as run_ from './run.js';
 import * as save from './save.js';
 import * as progress from './progress.js';
@@ -450,6 +450,20 @@ export class Combat {
     }
     fb.innerHTML = html;
     $('.qcard')?.classList.add(ok ? 'ok' : 'bad');
+    if (this.enemy.tier === 'boss') this.bossSays(w);
+  }
+
+  /** Bosses taunt with a real example sentence using the word just asked. */
+  bossSays(w) {
+    const ex = exampleFor(w, this.rng);
+    const line = $('.enemy-line');
+    if (!ex || !line) return;
+    const i = ex.ru.indexOf(ex.form);
+    const ru = i >= 0 ? `${esc(ex.ru.slice(0, i))}<b>${esc(ex.form)}</b>${esc(ex.ru.slice(i + ex.form.length))}` : esc(ex.ru);
+    line.innerHTML = `«<span lang="ru">${ru}</span>» <small>${esc(ex.en)}</small>`;
+    line.classList.remove('says');
+    void line.offsetWidth;
+    line.classList.add('says');
   }
 
   markOptions(chosen) {

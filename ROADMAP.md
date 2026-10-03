@@ -59,13 +59,10 @@ from the first unticked item. Keep each milestone playable.
 - [x] Gender challenge enemy (Кот учёный)
 - [x] Aspect-pair elite (Двойник)
 - [x] More events (20)
+- [x] Boss lines: Tatoeba example sentences (`scripts/build_sentences.py`), also on flashcard backs
 - [ ] Relic synergies
 - [x] Run history (stats screen)
 - [x] PWA: offline cache + install to home screen
 
 ## Ideas backlog
-- Example sentences (Tatoeba) as "boss quotes"
-- Verb aspect pair mini-boss (match imperfective↔perfective)
-- Gender challenge enemies (choose м/ж/с)
 - Audio-only questions (listen → pick)
-- Export/import save
