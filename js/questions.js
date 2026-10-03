@@ -1,5 +1,5 @@
 // Build question objects from words.
-import { distractors, acceptedRussian, hintLine } from './data.js';
+import { distractors, acceptedRussian, hintLine, WORDS } from './data.js';
 import { checkRussian, checkEnglish, stripStress } from './text.js';
 import * as save from './save.js';
 
@@ -61,6 +61,27 @@ export function makeGender(w) {
     answerLabel: GENDER_OPTS.find((o) => o.g === w.g).label,
     options: GENDER_OPTS.map((o) => ({ label: o.label, sub: o.en, lang: 'ru', correct: o.g === w.g, word: w })),
   };
+}
+
+/** Aspect partner question: given a verb, pick its other-aspect partner. */
+export function makeAspect(w, rng, verbs) {
+  const partner = WORDS_BY_BARE().get(w.partner);
+  const label = partner ? ruLabel(partner) : w.partner;
+  const others = rng.sample(verbs.filter((v) => v.bare !== w.bare && v.bare !== w.partner && v.partner !== w.bare), 3);
+  const want = w.asp === 'pf' ? 'imperfective' : 'perfective';
+  return {
+    word: w, format: 'aspect', dir: 'ru2en',
+    prompt: { main: ruLabel(w), sub: `${w.gloss} · ${w.asp === 'pf' ? 'perfective' : 'imperfective'}`, lang: 'ru', speak: w.bare },
+    want,
+    answerLabel: label,
+    options: rng.shuffle([{ label, lang: 'ru', correct: true, word: w }, ...others.map((o) => ({ label: ruLabel(o), lang: 'ru', correct: false, word: o }))]),
+  };
+}
+
+let byBare = null;
+function WORDS_BY_BARE() {
+  if (!byBare) byBare = new Map(WORDS.map((x) => [x.bare, x]));
+  return byBare;
 }
 
 /** Match-pairs board: n words; left column Russian, right column English, both shuffled. */

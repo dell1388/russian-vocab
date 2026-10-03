@@ -91,6 +91,11 @@ export const ENEMIES = {
     art: { kind: 'spirit', coat: '#4d5e2a', hat: 'kerchief', acc: 'none', skin: '#9bae74', hair: '#3c4a1e' },
     lines: [['Хи-хи-хи!', 'Hee-hee-hee!']],
   },
+  dvoynik: {
+    name: 'Двойник', en: 'The Double', tier: 'elite', hp: 64, dmg: 8, format: 'aspect', traits: ['fast'],
+    art: { kind: 'human', coat: '#4b2e83', hat: 'cap', acc: 'glasses', skin: '#d8c3e6' },
+    lines: [['Делать или сделать?', 'To do, or to get it done?'], ['У каждого глагола есть пара.', 'Every verb has a twin.']],
+  },
   tigr: {
     name: 'Амурский тигр', en: 'Amur tiger', tier: 'elite', hp: 80, dmg: 7, format: 'type', traits: ['double'],
     art: { kind: 'beast', coat: '#d9741b', hat: 'ears', acc: 'tigerstripes', skin: '#e8892e', snout: 'cat' },

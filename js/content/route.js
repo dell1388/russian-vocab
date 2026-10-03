@@ -12,7 +12,7 @@ export const LEGS = [
     from: 'Казань', fromEn: 'Kazan', to: 'Екатеринбург', toEn: 'Yekaterinburg', boss: 'mednaya',
     stations: ['Агрыз', 'Ижевск', 'Пермь', 'Кунгур', 'Шаля', 'Балезино', 'Глазов', 'Верещагино', 'Первоуральск'],
     enemies: ['volk', 'leshiy', 'gopnik', 'kontroler', 'kot'],
-    elites: ['byurokrat', 'kikimora'],
+    elites: ['byurokrat', 'kikimora', 'dvoynik'],
     color: '#b5651d',
   },
   {
@@ -26,7 +26,7 @@ export const LEGS = [
     from: 'Новосибирск', fromEn: 'Novosibirsk', to: 'Иркутск', toEn: 'Irkutsk', boss: 'gorynych',
     stations: ['Тайга', 'Мариинск', 'Ачинск', 'Красноярск', 'Канск', 'Тайшет', 'Нижнеудинск', 'Тулун', 'Зима'],
     enemies: ['medved', 'nerpa', 'leshiy', 'snegovik'],
-    elites: ['byurokrat', 'tigr'],
+    elites: ['byurokrat', 'tigr', 'dvoynik'],
     color: '#1d4e89',
   },
   {

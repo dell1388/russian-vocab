@@ -55,7 +55,7 @@ from the first unticked item. Keep each milestone playable.
 - [x] Theme toggle (light/dark) in settings
 - [ ] Boss-specific mechanics beyond phases (Кощей needle, Горыныч per-head HP bars)
 - [x] Gender challenge enemy (Кот учёный)
-- [ ] Aspect-pair mini-boss (imperfective↔perfective)
+- [x] Aspect-pair elite (Двойник)
 - [x] More events (20)
 - [ ] Relic synergies
 - [x] Run history (stats screen)

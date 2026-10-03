@@ -3,7 +3,7 @@ import { ENEMIES, TRAIT_INFO } from './content/enemies.js';
 import { CHARACTERS } from './content/characters.js';
 import { RELICS } from './content/relics.js';
 import { CONSUMABLES } from './content/consumables.js';
-import { makeQuestion, makeMatch, makeGender, resolveDir, ruLabel } from './questions.js';
+import { makeQuestion, makeMatch, makeGender, makeAspect, resolveDir, ruLabel } from './questions.js';
 import { pickWord } from './srs.js';
 import { glossKeys } from './data.js';
 import * as run_ from './run.js';
@@ -179,6 +179,19 @@ export class Combat {
       }
       format = 'mc';
     }
+    if (format === 'aspect') {
+      const verbs = this.pool.filter((x) => x.pos === 'verb' && x.partner && x.asp);
+      const w = verbs.length >= 4 && pickWord(verbs, save.get().srs, { rng: this.rng, recent: new Set(this.recent) });
+      if (w) {
+        this.q = makeAspect(w, this.rng, this.pool.filter((x) => x.pos === 'verb'));
+        this.pushRecent(w.id);
+        this.q.timeMs = 8000 * this.stats.timerMult * this.enrage * (1 - 0.06 * this.run.leg);
+        this.renderQuestion();
+        this.beginTimer();
+        return;
+      }
+      format = 'mc';
+    }
     let w = null;
     if (format === 'type') {
       w = this.pick(true);
@@ -260,7 +273,7 @@ export class Combat {
     const ms = Math.max(0, now - this.qStart);
     const typed = q.format === 'type';
     // Gender drills test grammar, not meaning: keep them out of the vocab SRS
-    if (q.format !== 'gender') progress.gradeWord(q.word.id, correct, typed);
+    if (q.format !== 'gender' && q.format !== 'aspect') progress.gradeWord(q.word.id, correct, typed);
     this.markOptions(info.chosen);
 
     if (correct) {
@@ -276,7 +289,7 @@ export class Combat {
       await sleep(info.result && !info.result.exact ? 1100 : 450);
     } else {
       this.run.stats.wrong++;
-      if (q.format !== 'gender') run_.addMissed(this.run, q.word.id);
+      if (q.format !== 'gender' && q.format !== 'aspect') run_.addMissed(this.run, q.word.id);
       this.streak = 0;
       this.fire('onWrong');
       this.feedback(false, info);
@@ -422,6 +435,8 @@ export class Combat {
       if (r && r.alt) html += ` <span>Also: <span lang="ru">${esc(ruL)}</span></span>`;
       else if (r && !r.exact && q.format === 'type') html += ` <span>Spelling: <b lang="${q.answerLang}">${esc(q.answerLang === 'ru' ? ruL : w.gloss)}</b></span>`;
       html += `</div>`;
+    } else if (q.format === 'aspect') {
+      html = `<div class="fb fb-bad"><b>${info.timeout ? 'Время вышло!' : 'Неправильно!'}</b> <span class="fb-ans"><span lang="ru">${esc(ruL)}</span> ↔ <span lang="ru">${esc(q.answerLabel)}</span></span></div>`;
     } else if (q.format === 'gender') {
       html = `<div class="fb fb-bad"><b>${info.timeout ? 'Время вышло!' : 'Неправильно!'}</b> <span class="fb-ans"><span lang="ru">${esc(ruL)}</span> — ${esc(q.answerLabel)} род</span></div>`;
     } else {
@@ -432,7 +447,7 @@ export class Combat {
   }
 
   markOptions(chosen) {
-    if (this.q.format !== 'mc' && this.q.format !== 'gender') return;
+    if (!['mc', 'gender', 'aspect'].includes(this.q.format)) return;
     $$('.opt').forEach((b, i) => {
       const o = this.q.options[i];
       b.disabled = true;
@@ -513,7 +528,7 @@ export class Combat {
   // ---------- input ----------
   onKey(e) {
     if (this.state !== 'asking') return;
-    if ((this.q.format === 'mc' || this.q.format === 'gender') && /^[1-4]$/.test(e.key)) {
+    if ((['mc', 'gender', 'aspect'].includes(this.q.format)) && /^[1-4]$/.test(e.key)) {
       const i = +e.key - 1;
       if (i < this.q.options.length) this.chooseOption(i);
     }
@@ -625,7 +640,7 @@ export class Combat {
     $('.qcard').classList.remove('ok', 'bad');
     $('.q-feedback').innerHTML = '';
     $('.q-prompt').innerHTML = `<span class="q-main" lang="${q.prompt.lang}">${esc(q.prompt.main)}</span>`;
-    const fmt = q.format === 'gender' ? 'Какой род? Which gender?' : q.format === 'type' ? (q.answerLang === 'ru' ? 'Напишите по-русски' : 'Type in English') : q.dir === 'en2ru' ? 'Выберите русское слово' : 'Choose the meaning';
+    const fmt = q.format === 'aspect' ? `Найдите пару — the ${q.want} partner` : q.format === 'gender' ? 'Какой род? Which gender?' : q.format === 'type' ? (q.answerLang === 'ru' ? 'Напишите по-русски' : 'Type in English') : q.dir === 'en2ru' ? 'Выберите русское слово' : 'Choose the meaning';
     $('.q-sub').innerHTML = `${q.isNew ? '<span class="new-tag">новое слово</span>' : ''}${q.prompt.sub ? `<span class="hint">${esc(q.prompt.sub)}</span>` : ''}<span class="fmt">${fmt}</span>`;
     $('.speak').style.visibility = q.dir === 'ru2en' ? 'visible' : 'hidden';
     const pv = $('.q-preview');
@@ -637,7 +652,7 @@ export class Combat {
     const q = this.q;
     this.renderPromptHead();
     const body = $('.q-body');
-    if (q.format === 'mc' || q.format === 'gender') {
+    if (['mc', 'gender', 'aspect'].includes(q.format)) {
       body.innerHTML = `<div class="opts ${q.format === 'gender' ? 'opts-3' : ''}">${q.options.map((o, i) => `<button class="opt" data-i="${i}" lang="${o.lang}"><kbd>${i + 1}</kbd>${esc(o.label)}${o.sub ? `<small>${esc(o.sub)}</small>` : ''}</button>`).join('')}</div>`;
       $$('.opt', body).forEach((b) => { b.onclick = () => this.chooseOption(+b.dataset.i); });
     } else {
