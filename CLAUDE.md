@@ -9,3 +9,7 @@ unticked item, tick + commit as you go).
 - Tests: `npm test` (pure logic). E2E: `node tests/e2e/smoke.mjs` (Playwright, Chromium preinstalled).
 - Keep game content (relics, enemies, events, characters) as data in `js/content/*.js`.
 - User prefers terse communication.
+- Live artifact (private): https://claude.ai/artifact/CXz4u5cZELT3gEvBdPpjgy — republish by regenerating a skeleton-free copy of
+  index.html (no doctype/html/head/body tags) and publishing it with `root` = repo and `files` = css, js/**, data/words.json.
+- E2E helpers in `tests/e2e/`: `smoke.mjs` (bot plays a run), `cat.mjs <enemyId> <dir>` (screenshot one fight), `dark.mjs`.
+- Balance: `node scripts/balance.mjs <accuracy> <speedFrac>`.
