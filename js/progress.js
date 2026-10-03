@@ -5,7 +5,7 @@ import { BANDS, wordPool } from './data.js';
 import { grade, isMastered } from './srs.js';
 import { CHARACTERS } from './content/characters.js';
 
-export const BAND_LEVELS = [1, 3, 5, 8, 12];
+export const BAND_LEVELS = [1, 3, 5, 8, 11, 14, 17, 21, 25, 29];
 
 export function xpForLevel(l) {
   const n = l - 1;

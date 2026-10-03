@@ -37,7 +37,7 @@ function title() {
       <div class="poster-rays"></div>
       <div class="title-train"><svg viewBox="0 0 120 120">${star(60, 60, 56, '#141414')}${star(60, 60, 46, '#d9a441')}</svg></div>
       <h1 class="logo">ТРАНС<span>СИБ</span></h1>
-      <p class="tagline">Russian vocabulary · 9,289 km · 1,000+ words</p>
+      <p class="tagline">Russian vocabulary · 9,289 km · 5,600 words</p>
     </div>
     <div class="title-stats">
       <div><b>${lvl}</b><small>уровень</small><div class="xpbar"><i style="width:${((p.xp - cur) / (next - cur)) * 100}%"></i></div></div>
@@ -380,7 +380,7 @@ function settings() {
 function about() {
   show(`<div class="panel about">
     <h2>Об игре <small>About</small></h2>
-    <p><b>Транссиб</b> is a roguelike for learning the ~1,000 most frequent Russian words.</p>
+    <p><b>Транссиб</b> is a roguelike for learning the ~5,600 most frequent Russian words.</p>
     <h3>Word data</h3>
     <ul>
       <li>Frequency: О. Н. Ляшевская, С. А. Шаров, <i>Частотный словарь современного русского языка</i> (на материалах Национального корпуса русского языка), 2009. Lemmatised, so every word is in its dictionary form.</li>

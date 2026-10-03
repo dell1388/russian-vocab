@@ -34,9 +34,9 @@ Node types: **fight**, **elite**, **shop** (₽), **rest stop** (самовар)
 - Enemy traits (e.g. Контролёр fines ₽ on misses, Волк hits twice, Леший flips direction).
 
 ## Vocab layer
-- `data/words.json`: ~1085 lemmas. Top 1000 by RNC lemma frequency (Lyashevskaya & Sharoff)
+- `data/words.json`: ~5600 lemmas. Top 5,500 by RNC lemma frequency (Lyashevskaya & Sharoff)
   joined to OpenRussian (CC BY-SA) for stress, POS, gender, aspect, translations, plus everyday essentials.
-- Bands unlock by player level: 1–100 (+essentials), –250, –500, –750, all.
+- Bands unlock by player level: 1–100 (+essentials), –250, –500, –750, –1000, –1500, –2000, –3000, –4000, all.
 - Spaced repetition (Leitner boxes 0–7) chooses words; weak/due words more often; new words introduced gradually.
   Typing only uses words already seen correctly at least once (falls back to MC).
 - Lenient answer check: case, stress, ё=е ignored; 1 typo allowed (2 for long words); Latin translit accepted;

@@ -56,7 +56,7 @@ test('srs picks new words first, then reviews', () => {
   const pool = wordPool(1, null);
   const srs = {};
   const w = pickWord(pool, srs, { rng, now: 0 });
-  assert.ok(w.id <= pool[6].id);
+  assert.ok(pool.slice(0, 6).includes(w), 'new words come from the front of the learning order');
   srs[w.id] = grade(null, false, 0);
   let hits = 0;
   for (let i = 0; i < 50; i++) if (pickWord(pool, srs, { rng, now: 10 * 60000, newRate: 0 }).id === w.id) hits++;

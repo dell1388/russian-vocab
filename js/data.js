@@ -6,7 +6,12 @@ export const BANDS = [
   { max: 250, name: 'Топ 250', en: 'Words 101–250' },
   { max: 500, name: 'Топ 500', en: 'Words 251–500' },
   { max: 750, name: 'Топ 750', en: 'Words 501–750' },
-  { max: Infinity, name: 'Все', en: 'Words 751+' },
+  { max: 1000, name: 'Топ 1000', en: 'Words 751–1000' },
+  { max: 1500, name: 'Топ 1500', en: 'Words 1001–1500' },
+  { max: 2000, name: 'Топ 2000', en: 'Words 1501–2000' },
+  { max: 3000, name: 'Топ 3000', en: 'Words 2001–3000' },
+  { max: 4000, name: 'Топ 4000', en: 'Words 3001–4000' },
+  { max: Infinity, name: 'Все', en: 'Words 4001+' },
 ];
 
 export const POS_LABEL = {

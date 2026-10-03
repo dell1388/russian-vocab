@@ -4,7 +4,9 @@ Work top to bottom. Tick boxes as done and commit. Future sessions: read `SPEC.m
 from the first unticked item. Keep each milestone playable.
 
 ## M0 — Data
-- [x] Build word list: RNC lemma frequency × OpenRussian (`scripts/build_words.py`)
+- [x] Build word list: RNC lemma frequency × OpenRussian (`scripts/build_words.py 5600`)
+- [x] Expand to 5,600 words with auto gloss cleanup (English-frequency filter for 2nd meanings)
+- [ ] Spot-check glosses for words 1000–5600 and add overrides
 - [x] Manual gloss fixes + skips (`scripts/overrides.json`)
 - [x] Everyday essentials added (`extra` in overrides, tagged `ess`)
 - [x] Second pass review of glosses for words 300–1085 (look for odd 2nd items like "morn")

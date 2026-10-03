@@ -20,6 +20,9 @@ RAW = os.path.join(ROOT, 'data', 'raw')
 OR_BASE = 'https://raw.githubusercontent.com/Badestrand/russian-dictionary/master/'
 OR_FILES = ['nouns', 'verbs', 'adjectives', 'others']
 RNC_URL = 'http://dict.ruslang.ru/Freq2011.zip'
+# English word frequencies (OpenSubtitles, Hermit Dave, MIT) — used to drop obscure secondary glosses
+EN_FREQ_URL = 'https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/en/en_50k.txt'
+EN_COMMON_RANK = 15000
 
 csv.field_size_limit(10**8)
 
@@ -31,6 +34,10 @@ def fetch():
         if not os.path.exists(p):
             print('downloading', f)
             urllib.request.urlretrieve(OR_BASE + f + '.csv', p)
+    p = os.path.join(RAW, 'en_50k.txt')
+    if not os.path.exists(p):
+        print('downloading English frequency list')
+        urllib.request.urlretrieve(EN_FREQ_URL, p)
     p = os.path.join(RAW, 'freqrnc2011.csv')
     if not os.path.exists(p):
         print('downloading RNC freq')
@@ -82,14 +89,18 @@ def accent(s):
 JUNK = re.compile(r'\b(gapirish)\b')
 
 
-def split_senses(tr):
-    """'a, b; c' -> [['a','b'],['c']] with junk/dupes stripped."""
+def split_senses(tr, verb=False, lower=False):
+    """'a, b; c' -> [['a','b'],['c']] with junk/dupes stripped. '/' also separates items."""
     senses = []
     seen = set()
     for part in tr.split(';'):
         items = []
-        for it in re.split(r',(?![^()]*\))', part):
+        for it in re.split(r'[,/](?![^()]*\))', part):
             it = JUNK.sub('', it).strip().strip('.').strip()
+            if verb:
+                it = re.sub(r'^to\s+', '', it)
+            if lower and re.match(r'^[A-Z][a-z]', it):
+                it = it[0].lower() + it[1:]
             if not it or len(it) > 40:
                 continue
             k = it.lower()
@@ -124,10 +135,19 @@ def main():
         overrides = json.load(open(op, encoding='utf-8'))
     skip = {key(x) for x in overrides.get('skip', [])}
     drop = {x.lower() for x in overrides.get('glossDrop', [])}
+    en_rank = {}
+    with open(os.path.join(RAW, 'en_50k.txt'), encoding='utf-8') as fh:
+        for i, line in enumerate(fh):
+            en_rank[line.split(' ')[0]] = i
+
+    def common(item):
+        ws = re.findall(r"[a-z]+", item.lower())
+        return bool(ws) and all(en_rank.get(x, 10**9) < EN_COMMON_RANK for x in ws)
 
     def default_gloss(senses):
-        items = [senses[0][0]] + [x for x in senses[0][1:2] if x.lower() not in drop]
-        return ', '.join(items)
+        items = [senses[0][0]] + [x for x in senses[0][1:2] if x.lower() not in drop and common(x)]
+        g = ', '.join(items)
+        return g if len(g) <= 40 else items[0]
 
     used = set()
     words = []
@@ -148,7 +168,7 @@ def main():
         if row is None:
             continue
         used.add((row['_file'], row['_order']))
-        senses = split_senses(row['translations_en'])
+        senses = split_senses(row['translations_en'], verb=row['_file'] == 'verbs', lower=row['_file'] in ('verbs', 'others'))
         if not senses:
             continue
         w = {
@@ -191,7 +211,7 @@ def main():
             print('extra not found:', lemma)
             continue
         pos = {'nouns': 'noun', 'verbs': 'verb', 'adjectives': 'adj', 'others': 'adv'}[row['_file']]
-        senses = split_senses(row['translations_en'])
+        senses = split_senses(row['translations_en'], verb=row['_file'] == 'verbs', lower=row['_file'] in ('verbs', 'others'))
         w = {'id': 0, 'ru': accent(row['accented'] or row['bare']), 'bare': row['bare'], 'pos': pos,
              'en': senses, 'ipm': rnc_ipm.get(key(lemma), 20.0), 'gloss': default_gloss(senses), 'ess': 1}
         if row['_file'] == 'nouns' and row.get('gender'):

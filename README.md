@@ -1,6 +1,6 @@
 # Транссиб — Russian vocab roguelike
 
-Ride the Trans-Siberian from Москва to Владивосток, fighting your way through the ~1,000 most
+Ride the Trans-Siberian from Москва to Владивосток, fighting your way through the ~5,600 most
 common Russian words. Real-time battles, relics (значки), bosses from Russian folklore, spaced repetition
 under the hood.
 

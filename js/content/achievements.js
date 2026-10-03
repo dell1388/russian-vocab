@@ -19,6 +19,8 @@ export const ACHIEVEMENTS = [
   { id: 'master100', name: 'Студент', en: 'Student', desc: 'Master 100 words', check: (p, e) => e.type === 'mastered' && e.count >= 100 },
   { id: 'master300', name: 'Аспирант', en: 'Graduate', desc: 'Master 300 words', check: (p, e) => e.type === 'mastered' && e.count >= 300 },
   { id: 'master1000', name: 'Академик', en: 'Academician', desc: 'Master 1000 words', check: (p, e) => e.type === 'mastered' && e.count >= 1000 },
+  { id: 'master2500', name: 'Профессор', en: 'Professor', desc: 'Master 2500 words', check: (p, e) => e.type === 'mastered' && e.count >= 2500 },
+  { id: 'master5000', name: 'Живой словарь', en: 'Living dictionary', desc: 'Master 5000 words', check: (p, e) => e.type === 'mastered' && e.count >= 5000 },
   { id: 'level5', name: 'Пионер', en: 'Pioneer', desc: 'Reach level 5', check: (p) => p.level >= 5 },
   { id: 'level15', name: 'Герой труда', en: 'Hero of Labour', desc: 'Reach level 15', check: (p) => p.level >= 15 },
   { id: 'daily3', name: 'Пятилетка', en: 'Five-year plan', desc: '3-day daily challenge streak', check: (p) => (p.daily.streak || 0) >= 3 },
